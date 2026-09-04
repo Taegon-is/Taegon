@@ -409,18 +409,18 @@
   .footer-copy{ font-size:12px; color: var(--text-on-ink-muted); }
 
 /*imagenes de sellos*/
-  .diet-badges {
+ .diet-badges {
+  grid-column: 1 / -1;     /* Hace que no se quede encasillado en una sola columna */
   display: flex;
-  justify-content: center; /* Centra los dos sellos entre sí */
+  justify-content: center; /* Centra ambos sellos en la página */
   align-items: center;
-  gap: 20px;               /* Distancia uniforme entre ambos sellos */
-  margin-top: 25px;        /* Margen respecto al texto */
-  width: 100%;             /* Se limita estrictamente al ancho de info-lede */
-  max-width: 100%;
+  gap: 35px;               /* Distancia/separación entre los dos sellos */
+  margin-top: 40px;        /* Espacio para separarlos de los textos y cuadros de arriba */
+  width: 100%;
 }
 
 .diet-badge {
-  width: 60px;             /* Ajusta el tamaño de los sellos */
+  width: 70px;             /* Ancho de los sellos */
   height: auto;
   object-fit: contain;
 }
@@ -526,12 +526,8 @@
           personas que te rodean con la certeza de que cuidamos tu dieta o estilo
           de vida.
         </p>
-        <div class="diet-badges">
-          <img src="vegan.png" alt="Sello Vegan Friendly" class="diet-badge">
-          <img src="vegetarian.png" alt="Sello Vegetarian Friendly" class="diet-badge">
-        </div>
       </div>
-     
+        
       <div class="category-grid">
         <!-- Categoría 1 -->
         <div class="category-card">
@@ -558,7 +554,10 @@
           <p>Próximamente...</p>
         </div>
       </div>
-
+      <div class="diet-badges">
+          <img src="vegan.png" alt="Sello Vegan Friendly" class="diet-badge">
+          <img src="vegetarian.png" alt="Sello Vegetarian Friendly" class="diet-badge">
+      </div>
     </div>
   </div>
 </section>
