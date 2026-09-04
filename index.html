@@ -411,14 +411,16 @@
 /*imagenes de sellos*/
   .diet-badges {
   display: flex;
-  justify-content: center; /* Centra los sellos horizontalmente */
+  justify-content: center; /* Centra los dos sellos entre sí */
   align-items: center;
-  gap: 700px;               /* Distancia uniforme entre ambos sellos */
-  margin-top: 28px;        /* Espacio respecto al párrafo superior */
+  gap: 20px;               /* Distancia uniforme entre ambos sellos */
+  margin-top: 25px;        /* Margen respecto al texto */
+  width: 100%;             /* Se limita estrictamente al ancho de info-lede */
+  max-width: 100%;
 }
 
 .diet-badge {
-  width: 150px;             /* Ajusta el tamaño de los logos según prefieras */
+  width: 60px;             /* Ajusta el tamaño de los sellos */
   height: auto;
   object-fit: contain;
 }
