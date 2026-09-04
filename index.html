@@ -466,7 +466,7 @@
 <section class="view active hero" id="inicio">
   <div class="wrap">
     <div class="hero-copy">
-      <span class="kicker">Provisiones finas — San José, Costa Rica</span>
+      <span class="kicker">Inicio — Heredia, Costa Rica</span>
       <h1>Una casa pequeña para lo bien hecho.</h1>
       <p class="lede">
         Taegon reúne conservas, panadería y provisiones elaboradas en lotes
@@ -501,32 +501,40 @@
           productos van y vienen a lo largo del año. Eso, para nosotros,
           es parte de lo que los hace especiales.
         </p>
+        <p>
+          ¿Eres vegano, vegetariano o no consumes algún producto de origen animal?
+          Ten tranquilidad. Tenemos la opción vegana o vegetariana en todos 
+          nuestros productos. 
+          Con nosotros puedes consumir prácticamente los mismos productos que las
+          personas que te rodean con la certeza de que cuidamos tu dieta o estilo
+          de vida.
+        </p>
       </div>
-
+      <!--<img scr>-->
       <div class="category-grid">
         <!-- Categoría 1 -->
         <div class="category-card">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 21c-4-2-7-5.5-7-10a7 7 0 0 1 14 0c0 4.5-3 8-7 10Z"/><path d="M12 14c2-1 3-3 3-5"/></svg>
           <h3>Licores</h3>
-          <p>Hojas y flores secadas a baja temperatura para conservar aroma y color.</p>
+          <p>Tenemos variedad de licores tradicionales hechos de forma casera para que acompañe sus distintas actividades.</p>
         </div>
         <!-- Categoría 2 -->
         <div class="category-card">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8 3h8l1 4H7l1-4Z"/><path d="M6 7h12v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7Z"/><path d="M6 12h12"/></svg>
           <h3>Jaleas</h3>
-          <p>Fruta de temporada cocida despacio, en frascos pequeños numerados.</p>
+          <p>Ofrecemos una variedad de jaleas 100% naturales con distintas frutas de calidad.</p>
         </div>
         <!-- Categoría 3 -->
         <div class="category-card">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><ellipse cx="12" cy="12" rx="9" ry="5.5"/><path d="M3 12c0 3 4 5.5 9 5.5s9-2.5 9-5.5"/></svg>
           <h3>Panadería</h3>
-          <p>Horneados de masa madre y mantequilla, hechos en tandas cortas cada semana.</p>
+          <p>Ofrecemos una variedad de jaleas 100% naturales con distintas frutas de calidad.</p>
         </div>
         <!-- Categoría 4 -->
         <div class="category-card">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 2c2.5 3 4 6 4 8.5a4 4 0 1 1-8 0C8 8 9.5 5 12 2Z"/></svg>
           <h3>Chileras</h3>
-          <p>Prensados y tostados en pequeñas cantidades para no perder frescura.</p>
+          <p>Próximamente...</p>
         </div>
       </div>
     </div>
@@ -757,45 +765,45 @@
 <script>
 
   const PRODUCTOS = [
-  { id: 1, nombre: "Rompope", categoria: "licores",
+  { id: 01, nombre: "Rompope", categoria: "licores",
     descripcion: "Flor entera secada a baja temperatura. Infusión suave y floral.",
     precio: 3500, unidad: "Botella 1L" },
-  { id: 2, nombre: "Rompope", categoria: "licores",
+  { id: 02, nombre: "Rompope", categoria: "licores",
     descripcion: "Tostado lento en tandas pequeñas para un sabor profundo, sin cafeína.",
     precio: 2500, unidad: "Botella 420ml" },
 
-  { id: 3, nombre: "Jalea de Cas", categoria: "jaleas",
+  { id: 11, nombre: "Jalea de Cas", categoria: "jaleas",
     descripcion: "Fruta de temporada, cocida despacio con poca azúcar.",
     precio: 2500, unidad: "Frasco 265ml" },
-  { id: 4, nombre: "Jalea de Níspero (Hasta agotar existencias)", categoria: "jaleas",
+  /*{ id: 12, nombre: "Jalea de Níspero (Hasta agotar existencias)", categoria: "jaleas",
     descripcion: "",
-    precio: 2500, unidad: "Frasco 265ml" },
-  { id: 5, nombre: "Jalea de Maracuyá", categoria: "jaleas",
+    precio: 2500, unidad: "Frasco 265ml" },*/
+  { id: 13, nombre: "Jalea de Maracuyá", categoria: "jaleas",
     descripcion: "Fruta de temporada, cocida despacio con poca azúcar.",
     precio: 2500, unidad: "Frasco 265ml" },
-  { id: 6, nombre: "Jalea de Guayaba", categoria: "jaleas",
+  /*{ id: 14, nombre: "Jalea de Guayaba", categoria: "jaleas",
+    descripcion: "Miel monofloral de pequeños productores del Valle Central.",
+    precio: 2500, unidad: "Frasco 265ml" },*/
+    { id: 15, nombre: "Jalea de Piña", categoria: "jaleas",
     descripcion: "Miel monofloral de pequeños productores del Valle Central.",
     precio: 2500, unidad: "Frasco 265ml" },
-    { id: 7, nombre: "Jalea de Piña", categoria: "jaleas",
-    descripcion: "Miel monofloral de pequeños productores del Valle Central.",
-    precio: 2500, unidad: "Frasco 265ml" },
-    { id: 8, nombre: "Jalea de Fresa", categoria: "jaleas",
+    { id: 16, nombre: "Jalea de Fresa", categoria: "jaleas",
     descripcion: "Miel monofloral de pequeños productores del Valle Central.",
     precio: 2500, unidad: "Frasco 265ml" },
 
-  { id: 7, nombre: "Pan casero", categoria: "panaderia",
+  { id: 21, nombre: "Pan casero", categoria: "panaderia",
     descripcion: "Fermentación larga de 24 horas, horneado por tandas cada semana.",
     precio: 3200, unidad: "pieza 600g" },
-  { id: 9 , nombre: "Pan de banano con chocolate", categoria: "panaderia",
+  { id: 22, nombre: "Pan de banano con chocolate", categoria: "panaderia",
     descripcion: "Mantequilla, sésamo tostado y un toque de sal de mar.",
     precio: 3600, unidad: "caja x10" },
 
-  { id: 7, nombre: "Aceite de sésamo tostado", categoria: "chileras",
+  /*{ id: 31, nombre: "Aceite de sésamo tostado", categoria: "chileras",
     descripcion: "Prensado en frío, tostado a mano en lotes pequeños.",
     precio: 7200, unidad: "botella 200ml" },
-  { id: 8, nombre: "Sal de flor con hierbas", categoria: "chileras",
+  { id: 32, nombre: "Sal de flor con hierbas", categoria: "chileras",
     descripcion: "Mezcla de hierbas secas propias con sal de mar fina.",
-    precio: 2900, unidad: "frasco 100g" },
+    precio: 2900, unidad: "frasco 100g" },*/
 ];
 
 
@@ -803,7 +811,7 @@ const CATEGORIAS = {
   licores: "Licores",
   jaleas: "Jaleas",
   panaderia: "Panadería",
-  chileras: "Chileras",
+  chileras: "Chileras (próximamente)",
 };
 
 
