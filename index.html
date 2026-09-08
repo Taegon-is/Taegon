@@ -52,7 +52,7 @@
   .wrap{ max-width: var(--maxw); margin:0 auto; padding: 0 32px; }
   section{ position:relative; }
 
-  /* Foco visible por teclado — accesibilidad, no lo quites */
+  /* Foco visible por teclado — accesibilidad */
   a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible,
   [tabindex]:focus-visible{
     outline: 2px solid var(--brass);
@@ -64,7 +64,6 @@
     html{ scroll-behavior:auto; }
   }
 
- 
   .view{ display:none; }
   .view.active{ display:block; animation: viewFade .35s ease both; }
   @keyframes viewFade{
@@ -103,18 +102,28 @@
   .on-ink{ background: var(--ink); color: var(--text-on-ink); }
   .on-parchment{ background: var(--parchment); color: var(--text-on-parchment); }
 
-    header{
+  /* HEADER & NAV */
+  header{
     position: sticky; top:0; z-index: 100;
     background: rgba(21,19,15,0.92);
     backdrop-filter: blur(6px);
     border-bottom: 1px solid var(--line-on-ink);
   }
   .nav{
-    max-width: var(--maxw); margin:0 auto; padding: 16px 32px;
+    max-width: var(--maxw); margin:0 auto;
+    padding: 2px 5px 1px 5px;
     display:flex; align-items:center; justify-content:space-between; gap: 5px;
   }
   .brand{ display:flex; align-items:center; gap:10px; }
-  .brand img{ height: 34px; width:auto; }
+  .brand img{
+    width: 90px;
+    height: auto;
+    display: flex;
+    margin-top: 4px;
+    position: relative;
+    top: 4px;
+    left: 20px;
+  }
   .brand span{
     font-family: var(--font-display); font-size:22px; letter-spacing:.05em;
     color: var(--text-on-ink);
@@ -154,9 +163,7 @@
     .nav-toggle{ display:block; }
   }
 
-  /* ====================================================================
-     3. INICIO / HERO
-     ==================================================================== */
+  /* INICIO / HERO */
   .hero{
     background: var(--ink); color: var(--text-on-ink);
     overflow:hidden; padding: 96px 0 88px;
@@ -193,7 +200,7 @@
     .hero{ padding: 56px 0 64px; text-align:left; }
   }
 
- 
+  /* INFORMACIÓN */
   .info{ padding: 96px 0; }
   .info-grid{ display:grid; grid-template-columns: 0.85fr 1.15fr; gap: 64px; }
   .info-lede p{ font-size:18px; line-height:1.85; }
@@ -212,7 +219,7 @@
     .info-grid, .category-grid{ grid-template-columns: 1fr; }
   }
 
- 
+  /* TIENDA */
   .shop{ background: var(--ink); color: var(--text-on-ink); padding: 96px 0 104px; }
   .shop-top{ display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom: 40px; }
   .filters{ display:flex; gap:10px; flex-wrap:wrap; }
@@ -248,7 +255,7 @@
   @media (max-width: 980px){ .product-grid{ grid-template-columns: repeat(2,1fr); } }
   @media (max-width: 620px){ .product-grid{ grid-template-columns: 1fr; } }
 
-  /* ---------- Carrito lateral (drawer) ---------- */
+  /* Carrito lateral (drawer) */
   .cart-overlay{
     position:fixed; inset:0; background: rgba(21,19,15,.55);
     opacity:0; pointer-events:none; transition: opacity .25s ease; z-index: 200;
@@ -283,7 +290,7 @@
   .cart-checkout .btn{ justify-content:center; width:100%; }
   .cart-note{ font-size:12px; color: var(--text-on-parchment-muted); margin-top:14px; line-height:1.6; }
 
- 
+  /* FICHA PRODUCTO */
   .product-detail-grid{ display:grid; grid-template-columns: 0.9fr 1.1fr; gap: 64px; align-items:start; }
   .product-image-box{
     width:100%; aspect-ratio: 1 / 1; background: var(--ink-soft);
@@ -309,7 +316,7 @@
 
   @media (max-width: 880px){ .product-detail-grid{ grid-template-columns: 1fr; } }
 
-  
+  /* LIGHTBOX */
   .lightbox-overlay{
     position:fixed; inset:0; background: rgba(21,19,15,.94);
     z-index: 300; display:flex; align-items:center; justify-content:center;
@@ -330,7 +337,7 @@
   .lightbox-image svg{ width:60%; height:60%; color: var(--brass); }
   .lightbox-image.zoomed{ transform: scale(1.6); cursor: zoom-out; }
 
-  
+  /* NOSOTROS */
   .about{ padding: 96px 0; }
   .about-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 64px; }
   .about-copy p{ font-size:16px; line-height:1.85; color: var(--text-on-parchment-muted); }
@@ -353,7 +360,6 @@
   .timeline-item p{ font-size:14px; line-height:1.6; color: var(--text-on-parchment-muted); margin-top:4px; }
 
   .founders{ margin-top: 88px; }
-  
   .founders-grid{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 48px; margin-top: 40px; }
   .founder-photo{
     width: 96px; height: 96px; border-radius:50%;
@@ -371,7 +377,7 @@
     .founders-grid{ gap: 40px; }
   }
 
-  
+  /* CONTACTO */
   .contact{ background: var(--ink); color: var(--text-on-ink); padding: 96px 0 104px; }
   .contact-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 64px; }
   .contact-cards{ display:flex; flex-direction:column; gap: 1px; background: var(--line-on-ink); }
@@ -397,44 +403,50 @@
 
   @media (max-width: 880px){ .contact-grid{ grid-template-columns: 1fr; } }
 
- 
+  /* FOOTER */
   footer{ background: var(--ink); border-top: 1px solid var(--line-on-ink); padding: 40px 0; }
   .footer-row{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap: 20px; }
   .footer-brand{ display:flex; align-items:center; gap:10px; }
-  .footer-brand img{ height:26px; }
+  .footer-brand img {
+    width: 75px;
+    height: auto;
+    display: flex;
+    margin: 0 auto;
+    position: relative;
+    top: 5px;
+    left: 20px;
+  }
   .footer-brand span{ font-family: var(--font-display); font-size:18px; color: var(--text-on-ink); }
   .footer-links{ display:flex; gap: 22px; }
   .footer-links a{ font-size:13px; color: var(--text-on-ink-muted); }
   .footer-links a:hover{ color: var(--brass); }
   .footer-copy{ font-size:12px; color: var(--text-on-ink-muted); }
 
-/*imagenes de sellos*/
- .diet-badges {
-  grid-column: 1 / -1;     /* Hace que no se quede encasillado en una sola columna */
-  display: flex;
-  justify-content: center; /* Centra ambos sellos en la página */
-  align-items: center;
-  gap: 340px;               /* Distancia/separación entre los dos sellos */
-  margin-top: 40px;        /* Espacio para separarlos de los textos y cuadros de arriba */
-  width: 100%;
-}
+  /* Imágenes de sellos */
+  .diet-badges {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 340px;
+    margin-top: 40px;
+    width: 100%;
+  }
 
-.diet-badge {
-  width: 170px;             /* Ancho de los sellos */
-  height: auto;
-  object-fit: contain;
-}
+  .diet-badge {
+    width: 170px;
+    height: auto;
+    object-fit: contain;
+  }
 </style>
 </head>
 <body>
-
 
 <header>
   <nav class="nav">
     <a href="#inicio" class="brand">
       <img src="android-chrome-512x512.png" alt="Taegon">
       <span>Taegon</span>
-     
     </a>
 
     <ul class="nav-links" id="navLinks">
@@ -455,30 +467,8 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
     </div>
-  
   </nav>
-  <style>
-    .nav { 
-      display: flex; 
-      align-items: center; 
-      justify-content: space-between; 
-      padding-top: 2px;
-      padding-bottom: 1px;
-      padding-left: 5px;
-      padding-right: 5px;
-    }
-    .brand img {
-      width: 90px;
-      height: auto;
-      display: flexbox;
-      margin-top: 4px;
-      position: relative;
-      top: 4px;
-      left: 20px;
-    }
-  </style>
 </header>
-
 
 <section class="view active hero" id="inicio">
   <div class="wrap">
@@ -500,7 +490,6 @@
     </div>
   </div>
 </section>
-
 
 <section class="view info on-parchment" id="informacion">
   <div class="wrap">
@@ -529,25 +518,21 @@
       </div>
         
       <div class="category-grid">
-        <!-- Categoría 1 -->
         <div class="category-card">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 21c-4-2-7-5.5-7-10a7 7 0 0 1 14 0c0 4.5-3 8-7 10Z"/><path d="M12 14c2-1 3-3 3-5"/></svg>
           <h3>Licores</h3>
           <p>Tenemos variedad de licores tradicionales hechos de forma casera para que acompañe sus distintas actividades.</p>
         </div>
-        <!-- Categoría 2 -->
         <div class="category-card">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8 3h8l1 4H7l1-4Z"/><path d="M6 7h12v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7Z"/><path d="M6 12h12"/></svg>
           <h3>Jaleas</h3>
           <p>Ofrecemos una variedad de jaleas 100% naturales con distintas frutas de calidad.</p>
         </div>
-        <!-- Categoría 3 -->
         <div class="category-card">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><ellipse cx="12" cy="12" rx="9" ry="5.5"/><path d="M3 12c0 3 4 5.5 9 5.5s9-2.5 9-5.5"/></svg>
           <h3>Panadería</h3>
           <p>Contamos con una variedad de pan de distintos tipos para que acompañes tus meriendas en el día a día.</p>
         </div>
-        <!-- Categoría 4 -->
         <div class="category-card">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 2c2.5 3 4 6 4 8.5a4 4 0 1 1-8 0C8 8 9.5 5 12 2Z"/></svg>
           <h3>Chileras</h3>
@@ -562,14 +547,12 @@
   </div>
 </section>
 
-
 <section class="view shop on-ink" id="tienda">
   <div class="wrap">
     <div class="section-head" style="margin-bottom:24px;">
       <span class="kicker">Tienda</span>
       <h2>Piezas de temporada</h2>
       <p>Hechas en lotes pequeños. Cuando algo se agota, vuelve en su próxima temporada.</p>
-
       <p>Todos nuestros productos tienen su opción Vegana/vegetariana, no te preocupes.</p>
     </div>
 
@@ -588,8 +571,7 @@
       Volver a la tienda
     </button>
 
-    <div class="product-detail-grid" id="productDetailContent">
-    </div>
+    <div class="product-detail-grid" id="productDetailContent"></div>
   </div>
 </section>
 
@@ -614,14 +596,12 @@
   <div class="cart-foot">
     <div class="cart-total-row"><span>Total</span><span id="cartTotal">₡0</span></div>
     <div class="cart-checkout">
-     
       <button class="btn btn-solid" id="checkoutWhatsapp">Pedir por WhatsApp</button>
       <button class="btn btn-outline-parchment" id="checkoutEmail">Pedir por correo</button>
     </div>
     <p class="cart-note">Al confirmar, se abrirá WhatsApp o tu correo con el detalle de tu pedido para que lo envíes. Nosotros coordinamos el pago y la entrega contigo directamente.</p>
   </div>
 </aside>
-
 
 <section class="view about on-parchment" id="nosotros">
   <div class="wrap">
@@ -651,7 +631,6 @@
       </div>
 
       <div class="timeline">
-       
         <div class="timeline-item">
           <span class="timeline-year">2023</span>
           <div><h4>Los primeros frascos</h4><p>Mermeladas y conservas hechas para familia y amigos.</p></div>
@@ -694,7 +673,6 @@
     </div>
   </div>
 </section>
-
 
 <section class="view contact on-ink" id="contacto">
   <div class="wrap">
@@ -752,23 +730,10 @@
   </div>
 </section>
 
-
 <footer>
   <div class="wrap footer-row">
     <a href="#inicio" class="footer-brand">
       <img src="android-chrome-512x512.png" alt="Taegon">
-      <style>
-        .footer-brand img {
-          width: 75px;
-          height: auto;
-          display: flexbox;
-          margin: 0 auto;
-          position: relative;
-          top: 5px;
-          left: 20px;
-
-        }
-      </style>
       <span>Taegon</span>
     </a>
     <ul class="footer-links">
@@ -782,383 +747,356 @@
   </div>
 </footer>
 
-
 <script>
-
   const PRODUCTOS = [
-  { id: 01, nombre: "Rompope", categoria: "licores",
-    descripcion: "Flor entera secada a baja temperatura. Infusión suave y floral.",
-    precio: 3500, unidad: "Botella 1L" },
-  { id: 02, nombre: "Rompope", categoria: "licores",
-    descripcion: "Tostado lento en tandas pequeñas para un sabor profundo, sin cafeína.",
-    precio: 2500, unidad: "Botella 420ml" },
-
-  { id: 11, nombre: "Jalea de Cas", categoria: "jaleas",
-    descripcion: "Fruta de temporada, cocida despacio con poca azúcar.",
-    precio: 2500, unidad: "Frasco 265ml" },
-  /*{ id: 12, nombre: "Jalea de Níspero (Hasta agotar existencias)", categoria: "jaleas",
-    descripcion: "",
-    precio: 2500, unidad: "Frasco 265ml" },*/
-  { id: 13, nombre: "Jalea de Maracuyá", categoria: "jaleas",
-    descripcion: "Fruta de temporada, cocida despacio con poca azúcar.",
-    precio: 2500, unidad: "Frasco 265ml" },
-  /*{ id: 14, nombre: "Jalea de Guayaba", categoria: "jaleas",
-    descripcion: "Miel monofloral de pequeños productores del Valle Central.",
-    precio: 2500, unidad: "Frasco 265ml" },*/
+    { id: 1, nombre: "Rompope", categoria: "licores",
+      descripcion: "Elaboración artesanal de sabor suave y cremoso.",
+      precio: 3500, unidad: "Botella 1L" },
+    { id: 2, nombre: "Rompope", categoria: "licores",
+      descripcion: "Elaboración artesanal de sabor suave y cremoso.",
+      precio: 2500, unidad: "Botella 420ml" },
+    { id: 11, nombre: "Jalea de Cas", categoria: "jaleas",
+      descripcion: "Fruta de temporada, cocida despacio con poca azúcar.",
+      precio: 2500, unidad: "Frasco 265ml" },
+    { id: 13, nombre: "Jalea de Maracuyá", categoria: "jaleas",
+      descripcion: "Fruta de temporada, cocida despacio con poca azúcar.",
+      precio: 2500, unidad: "Frasco 265ml" },
     { id: 15, nombre: "Jalea de Piña", categoria: "jaleas",
-    descripcion: "Miel monofloral de pequeños productores del Valle Central.",
-    precio: 2500, unidad: "Frasco 265ml" },
+      descripcion: "Fruta de temporada, cocida despacio con poca azúcar.",
+      precio: 2500, unidad: "Frasco 265ml" },
     { id: 16, nombre: "Jalea de Fresa", categoria: "jaleas",
-    descripcion: "Miel monofloral de pequeños productores del Valle Central.",
-    precio: 2500, unidad: "Frasco 265ml" },
+      descripcion: "Fruta de temporada, cocida despacio con poca azúcar.",
+      precio: 2500, unidad: "Frasco 265ml" },
+    { id: 21, nombre: "Pan casero", categoria: "panaderia",
+      descripcion: "Fermentación larga de 24 horas, horneado por tandas cada semana.",
+      precio: 3200, unidad: "pieza 600g" },
+    { id: 22, nombre: "Pan de banano con chocolate", categoria: "panaderia",
+      descripcion: "Receta artesanal con banano maduro y chispas de chocolate.",
+      precio: 3600, unidad: "caja x10" },
+  ];
 
-  { id: 21, nombre: "Pan casero", categoria: "panaderia",
-    descripcion: "Fermentación larga de 24 horas, horneado por tandas cada semana.",
-    precio: 3200, unidad: "pieza 600g" },
-  { id: 22, nombre: "Pan de banano con chocolate", categoria: "panaderia",
-    descripcion: "Mantequilla, sésamo tostado y un toque de sal de mar.",
-    precio: 3600, unidad: "caja x10" },
-
-  /*{ id: 31, nombre: "Aceite de sésamo tostado", categoria: "chileras",
-    descripcion: "Prensado en frío, tostado a mano en lotes pequeños.",
-    precio: 7200, unidad: "botella 200ml" },
-  { id: 32, nombre: "Sal de flor con hierbas", categoria: "chileras",
-    descripcion: "Mezcla de hierbas secas propias con sal de mar fina.",
-    precio: 2900, unidad: "frasco 100g" },*/
-];
-
-
-const CATEGORIAS = {
-  licores: "Licores",
-  jaleas: "Jaleas",
-  panaderia: "Panadería",
-  chileras: "Chileras (próximamente)",
-};
-
-
-const CONTACTO = {
-  whatsappPedidos: "50661384503",      
-  correo: "contacto.taegon@gmail.com",
-};
-
-function formatoColones(numero){
-  return "₡" + numero.toLocaleString("es-CR");
-}
-
-
-const ICONOS = {
-  licores: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 21c-4-2-7-5.5-7-10a7 7 0 0 1 14 0c0 4.5-3 8-7 10Z"/><path d="M12 14c2-1 3-3 3-5"/></svg>',
-  jaleas: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8 3h8l1 4H7l1-4Z"/><path d="M6 7h12v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7Z"/><path d="M6 12h12"/></svg>',
-  panaderia: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><ellipse cx="12" cy="12" rx="9" ry="5.5"/><path d="M3 12c0 3 4 5.5 9 5.5s9-2.5 9-5.5"/></svg>',
-  chileras: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 2c2.5 3 4 6 4 8.5a4 4 0 1 1-8 0C8 8 9.5 5 12 2Z"/></svg>',
-};
-
-
-const IDS_PAGINA = ["inicio", "informacion", "tienda", "producto", "nosotros", "contacto"];
-
-function irAVista(id, opciones){
-  opciones = opciones || {};
-  if(IDS_PAGINA.indexOf(id) === -1) id = "inicio";
-
-  IDS_PAGINA.forEach(function(pid){
-    const el = document.getElementById(pid);
-    if(el) el.classList.toggle("active", pid === id);
-  });
-
-  document.querySelectorAll(".nav-links a, .footer-links a").forEach(function(a){
-    a.classList.toggle("active-link", a.getAttribute("href") === "#" + id);
-  });
-
-  navLinks.classList.remove("open");
-  window.scrollTo(0, 0);
-
-  if(!opciones.sinHistorial){
-    history.pushState(null, "", "#" + id);
-  }
-}
-
-
-document.addEventListener("click", function(e){
-  const link = e.target.closest('a[href^="#"]');
-  if(!link) return;
-  const id = link.getAttribute("href").slice(1);
-  if(IDS_PAGINA.indexOf(id) !== -1){
-    e.preventDefault();
-    irAVista(id);
-  }
-});
-
-document.getElementById("volverTiendaBtn").addEventListener("click", function(){
-  irAVista("tienda");
-});
-
-window.addEventListener("popstate", function(){
-  const id = (location.hash || "#inicio").slice(1);
-  irAVista(id, { sinHistorial: true });
-});
-
-
-(function iniciarSegunHash(){
-  const id = (location.hash || "#inicio").slice(1);
-  if(IDS_PAGINA.indexOf(id) !== -1 && id !== "inicio"){
-    irAVista(id, { sinHistorial: true });
-  } else {
-    document.querySelector('.nav-links a[href="#inicio"]').classList.add("active-link");
-  }
-})();
-
-function pintarFiltros(){
-  const cont = document.getElementById("filters");
-  const todas = ["todos", ...Object.keys(CATEGORIAS)];
-  cont.innerHTML = todas.map(cat => {
-    const nombre = cat === "todos" ? "Todo" : CATEGORIAS[cat];
-    const activa = cat === filtroActivo ? "active" : "";
-    return `<button class="filter-btn ${activa}" data-cat="${cat}">${nombre}</button>`;
-  }).join("");
-
-  cont.querySelectorAll(".filter-btn").forEach(btn=>{
-    btn.addEventListener("click", ()=>{
-      filtroActivo = btn.dataset.cat;
-      pintarFiltros();
-      pintarProductos();
-    });
-  });
-}
-
-
-const ICONO_FLECHA = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 6l6 6-6 6"/></svg>';
-
-function pintarProductos(){
-  const cont = document.getElementById("productGrid");
-  const lista = filtroActivo === "todos"
-    ? PRODUCTOS
-    : PRODUCTOS.filter(p => p.categoria === filtroActivo);
-
-  cont.innerHTML = lista.map(p => `
-    <article class="product-card" data-id="${p.id}" tabindex="0" role="button" aria-label="Ver ${p.nombre}">
-      <div class="product-icon">${ICONOS[p.categoria] || ""}</div>
-      <h3>${p.nombre}</h3>
-      <p class="desc">${p.descripcion}</p>
-      <div class="product-foot">
-        <span class="price">${formatoColones(p.precio)}<br><small>${p.unidad}</small></span>
-        <span class="view-arrow" aria-hidden="true">${ICONO_FLECHA}</span>
-      </div>
-    </article>
-  `).join("");
-
-  cont.querySelectorAll(".product-card").forEach(card=>{
-    const id = Number(card.dataset.id);
-    card.addEventListener("click", ()=> abrirProducto(id));
-    card.addEventListener("keydown", (e)=>{
-      if(e.key === "Enter" || e.key === " "){
-        e.preventDefault();
-        abrirProducto(id);
-      }
-    });
-  });
-}
-
-let cantidadDetalle = 1;
-
-function abrirProducto(id){
-  const prod = PRODUCTOS.find(p => p.id === id);
-  if(!prod) return;
-  cantidadDetalle = 1;
-  pintarFichaProducto(prod);
-  irAVista("producto");
-}
-
-function pintarFichaProducto(prod){
-  const cont = document.getElementById("productDetailContent");
-  cont.innerHTML = `
-    <div>
-      <div class="product-image-box" id="detailImageBox" tabindex="0" role="button" aria-label="Ampliar imagen de ${prod.nombre}">
-        ${ICONOS[prod.categoria] || ""}
-      </div>
-      <p class="zoom-hint">Toca la imagen para ampliarla</p>
-    </div>
-    <div class="product-detail-info">
-      <span class="kicker">${CATEGORIAS[prod.categoria] || ""}</span>
-      <h2>${prod.nombre}</h2>
-      <div class="price">${formatoColones(prod.precio)} <small>/ ${prod.unidad}</small></div>
-      <p class="detail-desc">${prod.descripcion}</p>
-
-      <div class="detail-cart-box">
-        <div class="qty-row">
-          <button type="button" id="detailMenos" aria-label="Restar">−</button>
-          <span id="detailCantidad">1</span>
-          <button type="button" id="detailMas" aria-label="Sumar">+</button>
-        </div>
-        <button type="button" class="btn btn-solid" id="detailAgregarBtn">Añadir al carrito</button>
-      </div>
-      <p class="detail-note">Al añadirlo, el producto queda en tu carrito. Podrás revisarlo y enviar tu pedido por WhatsApp o correo desde el botón "Carrito" del menú.</p>
-    </div>
-  `;
-
-  document.getElementById("detailMenos").addEventListener("click", ()=>{
-    if(cantidadDetalle > 1) cantidadDetalle--;
-    document.getElementById("detailCantidad").textContent = cantidadDetalle;
-  });
-  document.getElementById("detailMas").addEventListener("click", ()=>{
-    cantidadDetalle++;
-    document.getElementById("detailCantidad").textContent = cantidadDetalle;
-  });
-
-  const agregarBtn = document.getElementById("detailAgregarBtn");
-  agregarBtn.addEventListener("click", ()=>{
-    agregarAlCarrito(prod.id, cantidadDetalle);
-    const original = agregarBtn.textContent;
-    agregarBtn.textContent = "Añadido ✓";
-    setTimeout(()=>{ agregarBtn.textContent = original; }, 1000);
-  });
-
-  const imageBox = document.getElementById("detailImageBox");
-  const abrirLightbox = ()=>{
-    document.getElementById("lightboxImage").innerHTML = ICONOS[prod.categoria] || "";
-    document.getElementById("lightboxImage").classList.remove("zoomed");
-    document.getElementById("lightboxOverlay").classList.add("open");
+  const CATEGORIAS = {
+    licores: "Licores",
+    jaleas: "Jaleas",
+    panaderia: "Panadería",
+    chileras: "Chileras (próximamente)",
   };
-  imageBox.addEventListener("click", abrirLightbox);
-  imageBox.addEventListener("keydown", (e)=>{
-    if(e.key === "Enter" || e.key === " "){ e.preventDefault(); abrirLightbox(); }
+
+  const CONTACTO = {
+    whatsappPedidos: "50661384503",      
+    correo: "contacto.taegon@gmail.com",
+  };
+
+  function formatoColones(numero){
+    return "₡" + numero.toLocaleString("es-CR");
+  }
+
+  const ICONOS = {
+    licores: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 21c-4-2-7-5.5-7-10a7 7 0 0 1 14 0c0 4.5-3 8-7 10Z"/><path d="M12 14c2-1 3-3 3-5"/></svg>',
+    jaleas: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8 3h8l1 4H7l1-4Z"/><path d="M6 7h12v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7Z"/><path d="M6 12h12"/></svg>',
+    panaderia: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><ellipse cx="12" cy="12" rx="9" ry="5.5"/><path d="M3 12c0 3 4 5.5 9 5.5s9-2.5 9-5.5"/></svg>',
+    chileras: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 2c2.5 3 4 6 4 8.5a4 4 0 1 1-8 0C8 8 9.5 5 12 2Z"/></svg>',
+  };
+
+  const IDS_PAGINA = ["inicio", "informacion", "tienda", "producto", "nosotros", "contacto"];
+
+  function irAVista(id, opciones){
+    opciones = opciones || {};
+    if(IDS_PAGINA.indexOf(id) === -1) id = "inicio";
+
+    IDS_PAGINA.forEach(function(pid){
+      const el = document.getElementById(pid);
+      if(el) el.classList.toggle("active", pid === id);
+    });
+
+    document.querySelectorAll(".nav-links a, .footer-links a").forEach(function(a){
+      a.classList.toggle("active-link", a.getAttribute("href") === "#" + id);
+    });
+
+    navLinks.classList.remove("open");
+    window.scrollTo(0, 0);
+
+    if(!opciones.sinHistorial){
+      history.pushState(null, "", "#" + id);
+    }
+  }
+
+  document.addEventListener("click", function(e){
+    const link = e.target.closest('a[href^="#"]');
+    if(!link) return;
+    const id = link.getAttribute("href").slice(1);
+    if(IDS_PAGINA.indexOf(id) !== -1){
+      e.preventDefault();
+      irAVista(id);
+    }
   });
-}
 
-const lightboxOverlay = document.getElementById("lightboxOverlay");
-const lightboxImage = document.getElementById("lightboxImage");
-document.getElementById("lightboxCloseBtn").addEventListener("click", ()=>{
-  lightboxOverlay.classList.remove("open");
-});
-lightboxOverlay.addEventListener("click", (e)=>{
-  if(e.target === lightboxOverlay) lightboxOverlay.classList.remove("open");
-});
-lightboxImage.addEventListener("click", ()=>{
-  lightboxImage.classList.toggle("zoomed");
-});
+  document.getElementById("volverTiendaBtn").addEventListener("click", function(){
+    irAVista("tienda");
+  });
 
-function agregarAlCarrito(id, cantidad){
-  cantidad = cantidad || 1;
-  carrito[id] = (carrito[id] || 0) + cantidad;
-  pintarCarrito();
-}
-function cambiarCantidad(id, delta){
-  if(!carrito[id]) return;
-  carrito[id] += delta;
-  if(carrito[id] <= 0) delete carrito[id];
-  pintarCarrito();
-}
-function quitarDelCarrito(id){
-  delete carrito[id];
-  pintarCarrito();
-}
-function totalCarrito(){
-  return Object.entries(carrito).reduce((sum, [id, cant])=>{
-    const prod = PRODUCTOS.find(p => p.id === Number(id));
-    return sum + (prod ? prod.precio * cant : 0);
-  }, 0);
-}
-function cantidadTotalItems(){
-  return Object.values(carrito).reduce((a,b)=>a+b, 0);
-}
+  window.addEventListener("popstate", function(){
+    const id = (location.hash || "#inicio").slice(1);
+    irAVista(id, { sinHistorial: true });
+  });
 
-function pintarCarrito(){
-  const cont = document.getElementById("cartItems");
-  const ids = Object.keys(carrito);
+  (function iniciarSegunHash(){
+    const id = (location.hash || "#inicio").slice(1);
+    if(IDS_PAGINA.indexOf(id) !== -1 && id !== "inicio"){
+      irAVista(id, { sinHistorial: true });
+    } else {
+      document.querySelector('.nav-links a[href="#inicio"]').classList.add("active-link");
+    }
+  })();
 
-  if(ids.length === 0){
-    cont.innerHTML = `<p class="cart-empty">Tu carrito está vacío. Explora la tienda y agrega lo que te guste.</p>`;
-  } else {
-    cont.innerHTML = ids.map(id=>{
-      const prod = PRODUCTOS.find(p => p.id === Number(id));
-      const cant = carrito[id];
-      return `
-        <div class="cart-item">
-          <div class="cart-item-icon">${ICONOS[prod.categoria] || ""}</div>
-          <div class="cart-item-info">
-            <h4>${prod.nombre}</h4>
-            <div class="unit">${formatoColones(prod.precio)} · ${prod.unidad}</div>
-            <div class="qty-row">
-              <button data-id="${id}" data-delta="-1" aria-label="Restar">−</button>
-              <span>${cant}</span>
-              <button data-id="${id}" data-delta="1" aria-label="Sumar">+</button>
-              <button class="remove" data-id="${id}" data-remove="1">Quitar</button>
-            </div>
-          </div>
-        </div>`;
+  function pintarFiltros(){
+    const cont = document.getElementById("filters");
+    const todas = ["todos", ...Object.keys(CATEGORIAS)];
+    cont.innerHTML = todas.map(cat => {
+      const nombre = cat === "todos" ? "Todo" : CATEGORIAS[cat];
+      const activa = cat === filtroActivo ? "active" : "";
+      return `<button class="filter-btn ${activa}" data-cat="${cat}">${nombre}</button>`;
     }).join("");
 
-    cont.querySelectorAll("[data-delta]").forEach(btn=>{
-      btn.addEventListener("click", ()=> cambiarCantidad(Number(btn.dataset.id), Number(btn.dataset.delta)));
-    });
-    cont.querySelectorAll("[data-remove]").forEach(btn=>{
-      btn.addEventListener("click", ()=> quitarDelCarrito(Number(btn.dataset.id)));
+    cont.querySelectorAll(".filter-btn").forEach(btn=>{
+      btn.addEventListener("click", ()=>{
+        filtroActivo = btn.dataset.cat;
+        pintarFiltros();
+        pintarProductos();
+      });
     });
   }
 
-  document.getElementById("cartTotal").textContent = formatoColones(totalCarrito());
-  document.getElementById("cartCount").textContent = cantidadTotalItems();
-}
+  const ICONO_FLECHA = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 6l6 6-6 6"/></svg>';
 
+  function pintarProductos(){
+    const cont = document.getElementById("productGrid");
+    const lista = filtroActivo === "todos"
+      ? PRODUCTOS
+      : PRODUCTOS.filter(p => p.categoria === filtroActivo);
 
-var carrito = {};
-var filtroActivo = "todos";
+    cont.innerHTML = lista.map(p => `
+      <article class="product-card" data-id="${p.id}" tabindex="0" role="button" aria-label="Ver ${p.nombre}">
+        <div class="product-icon">${ICONOS[p.categoria] || ""}</div>
+        <h3>${p.nombre}</h3>
+        <p class="desc">${p.descripcion}</p>
+        <div class="product-foot">
+          <span class="price">${formatoColones(p.precio)}<br><small>${p.unidad}</small></span>
+          <span class="view-arrow" aria-hidden="true">${ICONO_FLECHA}</span>
+        </div>
+      </article>
+    `).join("");
 
-const cartDrawer = document.getElementById("cartDrawer");
-const cartOverlay = document.getElementById("cartOverlay");
-function abrirCarrito(){ cartDrawer.classList.add("open"); cartOverlay.classList.add("open"); }
-function cerrarCarrito(){ cartDrawer.classList.remove("open"); cartOverlay.classList.remove("open"); }
-document.getElementById("cartOpenBtn").addEventListener("click", abrirCarrito);
-document.getElementById("cartCloseBtn").addEventListener("click", cerrarCarrito);
-cartOverlay.addEventListener("click", cerrarCarrito);
+    cont.querySelectorAll(".product-card").forEach(card=>{
+      const id = Number(card.dataset.id);
+      card.addEventListener("click", ()=> abrirProducto(id));
+      card.addEventListener("keydown", (e)=>{
+        if(e.key === "Enter" || e.key === " "){
+          e.preventDefault();
+          abrirProducto(id);
+        }
+      });
+    });
+  }
 
-const navLinks = document.getElementById("navLinks");
-document.getElementById("navToggle").addEventListener("click", ()=>{
-  navLinks.classList.toggle("open");
-});
+  let cantidadDetalle = 1;
 
+  function abrirProducto(id){
+    const prod = PRODUCTOS.find(p => p.id === id);
+    if(!prod) return;
+    cantidadDetalle = 1;
+    pintarFichaProducto(prod);
+    irAVista("producto");
+  }
 
-function textoDelPedido(){
-  const lineas = Object.entries(carrito).map(([id, cant])=>{
-    const prod = PRODUCTOS.find(p => p.id === Number(id));
-    return `• ${prod.nombre} x${cant} — ${formatoColones(prod.precio * cant)}`;
+  function pintarFichaProducto(prod){
+    const cont = document.getElementById("productDetailContent");
+    cont.innerHTML = `
+      <div>
+        <div class="product-image-box" id="detailImageBox" tabindex="0" role="button" aria-label="Ampliar imagen de ${prod.nombre}">
+          ${ICONOS[prod.categoria] || ""}
+        </div>
+        <p class="zoom-hint">Toca la imagen para ampliarla</p>
+      </div>
+      <div class="product-detail-info">
+        <span class="kicker">${CATEGORIAS[prod.categoria] || ""}</span>
+        <h2>${prod.nombre}</h2>
+        <div class="price">${formatoColones(prod.precio)} <small>/ ${prod.unidad}</small></div>
+        <p class="detail-desc">${prod.descripcion}</p>
+
+        <div class="detail-cart-box">
+          <div class="qty-row">
+            <button type="button" id="detailMenos" aria-label="Restar">−</button>
+            <span id="detailCantidad">1</span>
+            <button type="button" id="detailMas" aria-label="Sumar">+</button>
+          </div>
+          <button type="button" class="btn btn-solid" id="detailAgregarBtn">Añadir al carrito</button>
+        </div>
+        <p class="detail-note">Al añadirlo, el producto queda en tu carrito. Podrás revisarlo y enviar tu pedido por WhatsApp o correo desde el botón "Carrito" del menú.</p>
+      </div>
+    `;
+
+    document.getElementById("detailMenos").addEventListener("click", ()=>{
+      if(cantidadDetalle > 1) cantidadDetalle--;
+      document.getElementById("detailCantidad").textContent = cantidadDetalle;
+    });
+    document.getElementById("detailMas").addEventListener("click", ()=>{
+      cantidadDetalle++;
+      document.getElementById("detailCantidad").textContent = cantidadDetalle;
+    });
+
+    const agregarBtn = document.getElementById("detailAgregarBtn");
+    agregarBtn.addEventListener("click", ()=>{
+      agregarAlCarrito(prod.id, cantidadDetalle);
+      const original = agregarBtn.textContent;
+      agregarBtn.textContent = "Añadido ✓";
+      setTimeout(()=>{ agregarBtn.textContent = original; }, 1000);
+    });
+
+    const imageBox = document.getElementById("detailImageBox");
+    const abrirLightbox = ()=>{
+      document.getElementById("lightboxImage").innerHTML = ICONOS[prod.categoria] || "";
+      document.getElementById("lightboxImage").classList.remove("zoomed");
+      document.getElementById("lightboxOverlay").classList.add("open");
+    };
+    imageBox.addEventListener("click", abrirLightbox);
+    imageBox.addEventListener("keydown", (e)=>{
+      if(e.key === "Enter" || e.key === " "){ e.preventDefault(); abrirLightbox(); }
+    });
+  }
+
+  const lightboxOverlay = document.getElementById("lightboxOverlay");
+  const lightboxImage = document.getElementById("lightboxImage");
+  document.getElementById("lightboxCloseBtn").addEventListener("click", ()=>{
+    lightboxOverlay.classList.remove("open");
   });
-  lineas.push("", `Total: ${formatoColones(totalCarrito())}`);
-  return "Hola, quisiera hacer este pedido en Taegon:\n\n" + lineas.join("\n");
-}
+  lightboxOverlay.addEventListener("click", (e)=>{
+    if(e.target === lightboxOverlay) lightboxOverlay.classList.remove("open");
+  });
+  lightboxImage.addEventListener("click", ()=>{
+    lightboxImage.classList.toggle("zoomed");
+  });
 
-document.getElementById("checkoutWhatsapp").addEventListener("click", ()=>{
-  if(cantidadTotalItems() === 0){ return; }
-  const texto = encodeURIComponent(textoDelPedido());
-  window.open(`https://wa.me/${CONTACTO.whatsappPedidos}?text=${texto}`, "_blank");
-});
+  function agregarAlCarrito(id, cantidad){
+    cantidad = cantidad || 1;
+    carrito[id] = (carrito[id] || 0) + cantidad;
+    pintarCarrito();
+  }
+  function cambiarCantidad(id, delta){
+    if(!carrito[id]) return;
+    carrito[id] += delta;
+    if(carrito[id] <= 0) delete carrito[id];
+    pintarCarrito();
+  }
+  function quitarDelCarrito(id){
+    delete carrito[id];
+    pintarCarrito();
+  }
+  function totalCarrito(){
+    return Object.entries(carrito).reduce((sum, [id, cant])=>{
+      const prod = PRODUCTOS.find(p => p.id === Number(id));
+      return sum + (prod ? prod.precio * cant : 0);
+    }, 0);
+  }
+  function cantidadTotalItems(){
+    return Object.values(carrito).reduce((a,b)=>a+b, 0);
+  }
 
-document.getElementById("checkoutEmail").addEventListener("click", ()=>{
-  if(cantidadTotalItems() === 0){ return; }
-  const asunto = encodeURIComponent("Pedido en Taegon");
-  const cuerpo = encodeURIComponent(textoDelPedido());
-  window.location.href = `mailto:${CONTACTO.correo}?subject=${asunto}&body=${cuerpo}`;
-});
+  function pintarCarrito(){
+    const cont = document.getElementById("cartItems");
+    const ids = Object.keys(carrito);
 
+    if(ids.length === 0){
+      cont.innerHTML = `<p class="cart-empty">Tu carrito está vacío. Explora la tienda y agrega lo que te guste.</p>`;
+    } else {
+      cont.innerHTML = ids.map(id=>{
+        const prod = PRODUCTOS.find(p => p.id === Number(id));
+        const cant = carrito[id];
+        return `
+          <div class="cart-item">
+            <div class="cart-item-icon">${ICONOS[prod.categoria] || ""}</div>
+            <div class="cart-item-info">
+              <h4>${prod.nombre}</h4>
+              <div class="unit">${formatoColones(prod.precio)} · ${prod.unidad}</div>
+              <div class="qty-row">
+                <button data-id="${id}" data-delta="-1" aria-label="Restar">−</button>
+                <span>${cant}</span>
+                <button data-id="${id}" data-delta="1" aria-label="Sumar">+</button>
+                <button class="remove" data-id="${id}" data-remove="1">Quitar</button>
+              </div>
+            </div>
+          </div>`;
+      }).join("");
 
-document.getElementById("contactForm").addEventListener("submit", function(e){
-  e.preventDefault();
-  const nombre = document.getElementById("cf-name").value.trim();
-  const correo = document.getElementById("cf-email").value.trim();
-  const mensaje = document.getElementById("cf-msg").value.trim();
+      cont.querySelectorAll("[data-delta]").forEach(btn=>{
+        btn.addEventListener("click", ()=> cambiarCantidad(Number(btn.dataset.id), Number(btn.dataset.delta)));
+      });
+      cont.querySelectorAll("[data-remove]").forEach(btn=>{
+        btn.addEventListener("click", ()=> quitarDelCarrito(Number(btn.dataset.id)));
+      });
+    }
 
-  const asunto = encodeURIComponent(`Mensaje de ${nombre} desde el sitio de Taegon`);
-  const cuerpo = encodeURIComponent(`Nombre: ${nombre}\nCorreo: ${correo}\n\nMensaje:\n${mensaje}`);
-  window.location.href = `mailto:${CONTACTO.correo}?subject=${asunto}&body=${cuerpo}`;
+    document.getElementById("cartTotal").textContent = formatoColones(totalCarrito());
+    document.getElementById("cartCount").textContent = cantidadTotalItems();
+  }
 
-  document.getElementById("formMsg").textContent = "Abriendo tu programa de correo…";
-  this.reset();
-});
+  var carrito = {};
+  var filtroActivo = "todos";
 
-document.getElementById("year").textContent = new Date().getFullYear();
+  const cartDrawer = document.getElementById("cartDrawer");
+  const cartOverlay = document.getElementById("cartOverlay");
+  function abrirCarrito(){ cartDrawer.classList.add("open"); cartOverlay.classList.add("open"); }
+  function cerrarCarrito(){ cartDrawer.classList.remove("open"); cartOverlay.classList.remove("open"); }
+  document.getElementById("cartOpenBtn").addEventListener("click", abrirCarrito);
+  document.getElementById("cartCloseBtn").addEventListener("click", cerrarCarrito);
+  cartOverlay.addEventListener("click", cerrarCarrito);
 
-pintarFiltros();
-pintarProductos();
-pintarCarrito();
+  const navLinks = document.getElementById("navLinks");
+  document.getElementById("navToggle").addEventListener("click", ()=>{
+    navLinks.classList.toggle("open");
+  });
+
+  function textoDelPedido(){
+    const lineas = Object.entries(carrito).map(([id, cant])=>{
+      const prod = PRODUCTOS.find(p => p.id === Number(id));
+      return `• ${prod.nombre} x${cant} — ${formatoColones(prod.precio * cant)}`;
+    });
+    lineas.push("", `Total: ${formatoColones(totalCarrito())}`);
+    return "Hola, quisiera hacer este pedido en Taegon:\n\n" + lineas.join("\n");
+  }
+
+  document.getElementById("checkoutWhatsapp").addEventListener("click", ()=>{
+    if(cantidadTotalItems() === 0){ return; }
+    const texto = encodeURIComponent(textoDelPedido());
+    window.open(`https://wa.me/${CONTACTO.whatsappPedidos}?text=${texto}`, "_blank");
+  });
+
+  document.getElementById("checkoutEmail").addEventListener("click", ()=>{
+    if(cantidadTotalItems() === 0){ return; }
+    const asunto = encodeURIComponent("Pedido en Taegon");
+    const cuerpo = encodeURIComponent(textoDelPedido());
+    window.location.href = `mailto:${CONTACTO.correo}?subject=${asunto}&body=${cuerpo}`;
+  });
+
+  document.getElementById("contactForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    const nombre = document.getElementById("cf-name").value.trim();
+    const correo = document.getElementById("cf-email").value.trim();
+    const mensaje = document.getElementById("cf-msg").value.trim();
+
+    const asunto = encodeURIComponent(`Mensaje de ${nombre} desde el sitio de Taegon`);
+    const cuerpo = encodeURIComponent(`Nombre: ${nombre}\nCorreo: ${correo}\n\nMensaje:\n${mensaje}`);
+    window.location.href = `mailto:${CONTACTO.correo}?subject=${asunto}&body=${cuerpo}`;
+
+    document.getElementById("formMsg").textContent = "Abriendo tu programa de correo…";
+    this.reset();
+  });
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  pintarFiltros();
+  pintarProductos();
+  pintarCarrito();
 </script>
 </body>
 </html>
