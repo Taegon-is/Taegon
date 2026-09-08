@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#000000">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Taegon — Provisiones finas</title>
@@ -1097,6 +1099,13 @@
   pintarFiltros();
   pintarProductos();
   pintarCarrito();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js')
+      .then(reg => console.log('SW registrado', reg))
+      .catch(err => console.error('Error al registrar SW', err));
+  }
 </script>
 </body>
 </html>
