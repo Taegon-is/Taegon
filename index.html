@@ -87,7 +87,6 @@
   .btn-outline-ink:hover{ border-color: var(--brass); color: var(--brass); }
   .btn-outline-parchment{ border:1px solid var(--line-on-parchment); color: var(--text-on-parchment); }
   .btn-outline-parchment:hover{ border-color: var(--brass); color: var(--brass-dark); }
-  .btn-text{ font-size:14px; border-bottom:1px solid currentColor; padding:2px 0; }
 
   .kicker{
     font-family: var(--font-body); font-size: 13px; letter-spacing: .03em;
@@ -97,8 +96,6 @@
   .section-head{ max-width: 640px; margin-bottom: 56px; }
   .section-head h2{ font-size: clamp(32px, 4vw, 46px); line-height:1.15; margin-top:10px; }
   .section-head p{ margin-top:16px; font-size:16px; line-height:1.7; }
-  .on-ink .section-head p{ color: var(--text-on-ink-muted); }
-  .on-parchment .section-head p{ color: var(--text-on-parchment-muted); }
 
   .on-ink{ background: var(--ink); color: var(--text-on-ink); }
   .on-parchment{ background: var(--parchment); color: var(--text-on-parchment); }
@@ -164,54 +161,32 @@
     .nav-toggle{ display:block; }
   }
 
-  /* INICIO / HERO */
-  .hero{
-    background: var(--ink); color: var(--text-on-ink);
-    overflow:hidden; padding: 96px 0 88px;
-  }
+  /* HERO */
+  .hero{ background: var(--ink); color: var(--text-on-ink); overflow:hidden; padding: 96px 0 88px; }
   .hero .wrap{ position:relative; display:grid; grid-template-columns: 1.15fr 0.85fr; gap: 40px; align-items:center; }
   .hero-copy{ position:relative; z-index:2; }
   .hero-copy .kicker{ display:block; margin-bottom: 18px; }
-  .hero-copy h1{
-    font-size: clamp(40px, 6vw, 68px); line-height:1.08; font-weight:500;
-    max-width: 12ch;
-  }
-  .hero-copy .lede{
-    margin-top: 26px; font-size:17px; line-height:1.75; max-width: 46ch;
-    color: var(--text-on-ink-muted);
-  }
+  .hero-copy h1{ font-size: clamp(40px, 6vw, 68px); line-height:1.08; font-weight:500; max-width: 12ch; }
+  .hero-copy .lede{ margin-top: 26px; font-size:17px; line-height:1.75; max-width: 46ch; color: var(--text-on-ink-muted); }
   .hero-actions{ display:flex; gap:16px; margin-top: 38px; flex-wrap:wrap; }
-  .hero-mark{
-    position:relative; z-index:1;
-    display:flex; align-items:center; justify-content:center;
-  }
-  .hero-mark img{
-    width: 100%; max-width: 420px; opacity: .9;
-    filter: drop-shadow(0 30px 60px rgba(0,0,0,.45));
-    animation: rise 1.1s cubic-bezier(.2,.8,.2,1) both;
-  }
-  @keyframes rise{
-    from{ opacity:0; transform: translateY(18px) scale(.97); }
-    to{ opacity:.9; transform: translateY(0) scale(1); }
-  }
+  .hero-mark{ position:relative; z-index:1; display:flex; align-items:center; justify-content:center; }
+  .hero-mark img{ width: 100%; max-width: 420px; opacity: .9; filter: drop-shadow(0 30px 60px rgba(0,0,0,.45)); }
+
   @media (max-width: 880px){
     .hero .wrap{ grid-template-columns: 1fr; }
     .hero-mark{ order:-1; }
     .hero-mark img{ max-width: 220px; }
-    .hero{ padding: 56px 0 64px; text-align:left; }
+    .hero{ padding: 56px 0 64px; }
   }
 
-  /* INFORMACIÓN */
+  /* INFORMACION */
   .info{ padding: 96px 0; }
   .info-grid{ display:grid; grid-template-columns: 0.85fr 1.15fr; gap: 64px; }
-  .info-lede p{ font-size:18px; line-height:1.85; }
+  .info-lede p{ font-size:18px; line-height:1.85; color: var(--text-on-parchment-muted); }
   .info-lede p + p{ margin-top: 20px; }
-  .info-lede{ color: var(--text-on-parchment-muted); }
 
   .category-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--line-on-parchment); }
-  .category-card{
-    background: var(--parchment); padding: 30px 26px;
-  }
+  .category-card{ background: var(--parchment); padding: 30px 26px; }
   .category-card svg{ width:26px; height:26px; color: var(--brass); }
   .category-card h3{ font-size:20px; margin-top:16px; }
   .category-card p{ margin-top:8px; font-size:14px; line-height:1.6; color: var(--text-on-parchment-muted); }
@@ -220,29 +195,27 @@
     .info-grid, .category-grid{ grid-template-columns: 1fr; }
   }
 
-  /* TIENDA Y NAVEGACIÓN DE SECCIONES DE TIENDA */
+  /* TIENDA & SELECTOR */
   .shop{ background: var(--ink); color: var(--text-on-ink); padding: 96px 0 104px; }
   
   .store-type-selector {
     display: flex;
-    gap: 16px;
-    margin-bottom: 28px;
+    gap: 28px;
+    margin-bottom: 32px;
     border-bottom: 1px solid var(--line-on-ink);
-    padding-bottom: 14px;
+    padding-bottom: 12px;
   }
 
   .store-type-btn {
     font-family: var(--font-display);
-    font-size: 26px;
+    font-size: 28px;
     color: var(--text-on-ink-muted);
     position: relative;
-    padding-bottom: 6px;
+    padding-bottom: 8px;
     transition: color .2s ease;
   }
 
-  .store-type-btn:hover {
-    color: var(--text-on-ink);
-  }
+  .store-type-btn:hover { color: var(--text-on-ink); }
 
   .store-type-btn.active {
     color: var(--brass);
@@ -252,10 +225,10 @@
   .store-type-btn.active::after {
     content: '';
     position: absolute;
-    bottom: -15px;
+    bottom: -13px;
     left: 0;
     width: 100%;
-    height: 2px;
+    height: 3px;
     background: var(--brass);
   }
 
@@ -288,12 +261,11 @@
   }
   .view-arrow svg{ width:16px; height:16px; transition: transform .2s ease; }
   .product-card:hover .view-arrow, .product-card:focus-visible .view-arrow{ border-color: var(--brass); color: var(--brass); }
-  .product-card:hover .view-arrow svg, .product-card:focus-visible .view-arrow svg{ transform: translateX(3px); }
 
   @media (max-width: 980px){ .product-grid{ grid-template-columns: repeat(2,1fr); } }
   @media (max-width: 620px){ .product-grid{ grid-template-columns: 1fr; } }
 
-  /* Carrito lateral (drawer) */
+  /* CARRITO */
   .cart-overlay{
     position:fixed; inset:0; background: rgba(21,19,15,.55);
     opacity:0; pointer-events:none; transition: opacity .25s ease; z-index: 200;
@@ -319,37 +291,27 @@
   .cart-item-info .unit{ font-size:12px; color: var(--text-on-parchment-muted); margin-top:2px; }
   .qty-row{ display:flex; align-items:center; gap:12px; margin-top:10px; }
   .qty-row button{ width:24px; height:24px; border:1px solid var(--line-on-parchment); border-radius:50%; font-size:14px; display:flex; align-items:center; justify-content:center; }
-  .qty-row button:hover{ border-color: var(--brass); color: var(--brass-dark); }
-  .qty-row .remove{ margin-left:auto; font-size:12px; color: var(--text-on-parchment-muted); border:none; border-bottom:1px solid transparent; }
-  .qty-row .remove:hover{ color: var(--brass-dark); border-color: var(--brass-dark); }
+  .qty-row .remove{ margin-left:auto; font-size:12px; color: var(--text-on-parchment-muted); border:none; }
   .cart-foot{ padding: 22px 28px 28px; border-top:1px solid var(--line-on-parchment); }
   .cart-total-row{ display:flex; justify-content:space-between; font-family: var(--font-display); font-size:22px; margin-bottom:18px; }
   .cart-checkout{ display:flex; flex-direction:column; gap:10px; }
   .cart-checkout .btn{ justify-content:center; width:100%; }
-  .cart-note{ font-size:12px; color: var(--text-on-parchment-muted); margin-top:14px; line-height:1.6; }
 
-  /* FICHA PRODUCTO */
+  /* DETALLE PRODUCTO */
   .product-detail-grid{ display:grid; grid-template-columns: 0.9fr 1.1fr; gap: 64px; align-items:start; }
   .product-image-box{
     width:100%; aspect-ratio: 1 / 1; background: var(--ink-soft);
     border: 1px solid var(--line-on-ink); border-radius: var(--radius);
     display:flex; align-items:center; justify-content:center;
-    cursor: zoom-in; transition: border-color .2s ease;
+    cursor: zoom-in;
   }
-  .product-image-box:hover{ border-color: var(--brass); }
   .product-image-box svg{ width: 42%; height: 42%; color: var(--brass); }
-  .zoom-hint{ margin-top:14px; font-size:12px; color: var(--text-on-ink-muted); text-align:center; }
-  .product-detail-info .kicker{ display:block; }
   .product-detail-info h2{ font-size: clamp(30px, 3.6vw, 42px); margin-top:12px; line-height:1.15; }
   .product-detail-info .price{ font-size: 30px; margin-top: 20px; }
-  .product-detail-info .price small{ font-size:14px; }
   .detail-desc{ margin-top: 22px; font-size:16px; line-height:1.8; color: var(--text-on-ink-muted); max-width: 52ch; }
   .detail-cart-box{ display:flex; align-items:center; gap: 26px; margin-top: 36px; flex-wrap:wrap; }
-  .detail-cart-box .qty-row{ margin-top:0; }
   .detail-cart-box .qty-row button{ width:32px; height:32px; border-color: var(--line-on-ink); }
-  .detail-cart-box .qty-row button:hover{ border-color: var(--brass); color: var(--brass); }
   .detail-cart-box .qty-row span{ font-family: var(--font-display); font-size:18px; min-width:18px; text-align:center; }
-  .detail-note{ margin-top: 22px; font-size:12px; color: var(--text-on-ink-muted); line-height:1.6; max-width:52ch; }
   .back-to-shop{ margin-bottom: 44px; }
 
   @media (max-width: 880px){ .product-detail-grid{ grid-template-columns: 1fr; } }
@@ -364,16 +326,11 @@
   .lightbox-close{
     position:absolute; top: 26px; right: 26px; color: var(--text-on-ink);
     width:44px; height:44px; border:1px solid var(--line-on-ink); border-radius:50%;
-    display:flex; align-items:center; justify-content:center; transition: border-color .2s ease, color .2s ease;
+    display:flex; align-items:center; justify-content:center;
   }
   .lightbox-close svg{ width:18px; height:18px; }
-  .lightbox-close:hover{ border-color: var(--brass); color: var(--brass); }
-  .lightbox-image{
-    width: min(70vw, 520px); aspect-ratio:1/1; display:flex; align-items:center; justify-content:center;
-    cursor: zoom-in; transition: transform .3s cubic-bezier(.2,.8,.2,1);
-  }
+  .lightbox-image{ width: min(70vw, 520px); aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; }
   .lightbox-image svg{ width:60%; height:60%; color: var(--brass); }
-  .lightbox-image.zoomed{ transform: scale(1.6); cursor: zoom-out; }
 
   /* NOSOTROS */
   .about{ padding: 96px 0; }
@@ -381,14 +338,8 @@
   .about-copy p{ font-size:16px; line-height:1.85; color: var(--text-on-parchment-muted); }
   .about-copy p + p{ margin-top:18px; }
 
-  .dedication{
-    border-left: 2px solid var(--brass);
-    padding: 6px 0 6px 26px; margin-top: 40px;
-  }
-  .dedication p{
-    font-family: var(--font-display); font-style:italic; font-size: 22px;
-    line-height:1.6; color: var(--text-on-parchment);
-  }
+  .dedication{ border-left: 2px solid var(--brass); padding: 6px 0 6px 26px; margin-top: 40px; }
+  .dedication p{ font-family: var(--font-display); font-style:italic; font-size: 22px; line-height:1.6; color: var(--text-on-parchment); }
   .dedication span{ display:block; margin-top:10px; font-family: var(--font-body); font-style:normal; font-size:13px; color: var(--text-on-parchment-muted); }
 
   .timeline{ display:flex; flex-direction:column; gap: 26px; }
@@ -412,18 +363,13 @@
 
   @media (max-width: 880px){
     .about-grid, .founders-grid{ grid-template-columns: 1fr; }
-    .founders-grid{ gap: 40px; }
   }
 
   /* CONTACTO */
   .contact{ background: var(--ink); color: var(--text-on-ink); padding: 96px 0 104px; }
   .contact-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 64px; }
   .contact-cards{ display:flex; flex-direction:column; gap: 1px; background: var(--line-on-ink); }
-  .contact-card{
-    background: var(--ink); padding: 24px 26px; display:flex; align-items:center; gap:18px;
-    transition: background .2s ease;
-  }
-  .contact-card:hover{ background: var(--ink-soft); }
+  .contact-card{ background: var(--ink); padding: 24px 26px; display:flex; align-items:center; gap:18px; }
   .contact-card svg{ width:24px; height:24px; color: var(--brass); flex-shrink:0; }
   .contact-card h4{ font-size:16px; font-weight:500; }
   .contact-card p{ font-size:13px; color: var(--text-on-ink-muted); margin-top:3px; }
@@ -433,11 +379,8 @@
   .field input, .field textarea{
     width:100%; background:transparent; border:none; border-bottom:1px solid var(--line-on-ink);
     color: var(--text-on-ink); font-family: var(--font-body); font-size:15px; padding: 10px 2px;
-    resize: vertical;
   }
   .field input:focus, .field textarea:focus{ outline:none; border-color: var(--brass); }
-  .contact-form .btn{ align-self:flex-start; margin-top:8px; }
-  .form-msg{ font-size:13px; color: var(--brass); min-height:18px; }
 
   @media (max-width: 880px){ .contact-grid{ grid-template-columns: 1fr; } }
 
@@ -445,28 +388,19 @@
   footer{ background: var(--ink); border-top: 1px solid var(--line-on-ink); padding: 40px 0; }
   .footer-row{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap: 20px; }
   .footer-brand{ display:flex; align-items:center; gap:10px; }
-  .footer-brand img {
-    width: 75px;
-    height: auto;
-    display: flex;
-    margin: 0 auto;
-    position: relative;
-    top: 5px;
-    left: 20px;
-  }
+  .footer-brand img { width: 75px; height: auto; display: flex; margin: 0 auto; position: relative; top: 5px; left: 20px; }
   .footer-brand span{ font-family: var(--font-display); font-size:18px; color: var(--text-on-ink); }
   .footer-links{ display:flex; gap: 22px; }
   .footer-links a{ font-size:13px; color: var(--text-on-ink-muted); }
-  .footer-links a:hover{ color: var(--brass); }
   .footer-copy{ font-size:12px; color: var(--text-on-ink-muted); }
 
-  /* INSIGNIAS Y AJUSTE RESPONSIVO PARA MÓVILES */
+  /* INSIGNIAS CON AJUSTE RESPONSIVO */
   .diet-badges {
     grid-column: 1 / -1;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 340px; /* Separación amplia para computadora */
+    gap: 340px; /* Mantener la separación ancha en pantalla grande */
     flex-wrap: wrap;
     margin-top: 40px;
     width: 100%;
@@ -490,7 +424,7 @@
 
   @media (max-width: 600px) {
     .diet-badges {
-      gap: 24px; /* Ajuste fluido que evita que la pantalla se rompa */
+      gap: 24px; /* Ajuste fluido que previene desbordamiento en celular */
     }
     .diet-badge {
       max-width: 80px;
@@ -608,12 +542,12 @@
 <section class="view shop on-ink" id="tienda">
   <div class="wrap">
     <div class="store-type-selector">
-      <button class="store-type-btn active" id="btnStoreStandard" data-type="estandar">Tienda</button>
-      <button class="store-type-btn" id="btnStoreVegan" data-type="vegana">Tienda Vegana</button>
+      <button class="store-type-btn active" id="btnStoreStandard">Tienda</button>
+      <button class="store-type-btn" id="btnStoreVegan">Tienda Vegana</button>
     </div>
 
     <div class="section-head" style="margin-bottom:24px;">
-      <span class="kicker" id="shopKicker">Tienda Regular</span>
+      <span class="kicker" id="shopKicker">Catálogo Regular</span>
       <h2 id="shopTitle">Piezas de temporada</h2>
       <p id="shopSubtitle">Hechas en lotes pequeños. Cuando algo se agota, vuelve en su próxima temporada.</p>
     </div>
@@ -661,7 +595,9 @@
       <button class="btn btn-solid" id="checkoutWhatsapp">Pedir por WhatsApp</button>
       <button class="btn btn-outline-parchment" id="checkoutEmail">Pedir por correo</button>
     </div>
-    <p class="cart-note">Al confirmar, se abrirá WhatsApp o tu correo con el detalle de tu pedido para que lo envíes. Nosotros coordinamos el pago y la entrega contigo directamente.</p>
+    <p class="cart-note" style="font-size:12px; margin-top:10px; color:var(--text-on-parchment-muted);">
+      Al confirmar, se abrirá WhatsApp o tu correo con el detalle de tu pedido.
+    </p>
   </div>
 </aside>
 
@@ -784,8 +720,8 @@
             <label for="cf-msg">Mensaje</label>
             <textarea id="cf-msg" rows="4" required></textarea>
           </div>
-          <button type="submit" class="btn btn-solid">Enviar mensaje</button>
-          <p class="form-msg" id="formMsg"></p>
+          <button type="submit" class="btn btn-solid" style="margin-top:12px;">Enviar mensaje</button>
+          <p class="form-msg" id="formMsg" style="margin-top:10px; font-size:13px; color:var(--brass);"></p>
         </form>
       </div>
     </div>
@@ -810,113 +746,80 @@
 </footer>
 
 <script>
-  // Productos de la Tienda Tradicional / Estándar
+  // Catalogo 1: Productos de Tienda Tradicional
   const PRODUCTOS_ESTANDAR = [
-    { id: 1, nombre: "Rompope Tradicional", categoria: "licores",
-      descripcion: "Elaboración artesanal tradicional de sabor suave y cremoso.",
-      precio: 3500, unidad: "Botella 1L" },
-    { id: 2, nombre: "Rompope Tradicional", categoria: "licores",
-      descripcion: "Elaboración artesanal de sabor suave y cremoso en formato pequeño.",
-      precio: 2500, unidad: "Botella 420ml" },
-    { id: 11, nombre: "Jalea de Cas", categoria: "jaleas",
-      descripcion: "Fruta de temporada, cocida despacio con azúcar moreno.",
-      precio: 2500, unidad: "Frasco 265ml" },
-    { id: 13, nombre: "Jalea de Maracuyá", categoria: "jaleas",
-      descripcion: "Fruta de temporada, cocida despacio con receta clásica.",
-      precio: 2500, unidad: "Frasco 265ml" },
-    { id: 15, nombre: "Jalea de Piña", categoria: "jaleas",
-      descripcion: "Fruta de temporada cocida despacio.",
-      precio: 2500, unidad: "Frasco 265ml" },
-    { id: 16, nombre: "Jalea de Fresa", categoria: "jaleas",
-      descripcion: "Elaboración artesanal con fresas seleccionadas.",
-      precio: 2500, unidad: "Frasco 265ml" },
-    { id: 21, nombre: "Pan Casero de Mantequilla", categoria: "panaderia",
-      descripcion: "Fermentación larga de 24 horas, horneado por tandas.",
-      precio: 3200, unidad: "pieza 600g" },
-    { id: 22, nombre: "Pan de Banano Tradicional", categoria: "panaderia",
-      descripcion: "Receta artesanal con banano maduro y chispas de chocolate.",
-      precio: 3600, unidad: "caja x10" },
+    { id: 1, nombre: "Rompope Tradicional", categoria: "licores", descripcion: "Elaboración artesanal tradicional de sabor suave y cremoso.", precio: 3500, unidad: "Botella 1L" },
+    { id: 2, nombre: "Rompope Tradicional", categoria: "licores", descripcion: "Elaboración artesanal de sabor suave y cremoso en formato pequeño.", precio: 2500, unidad: "Botella 420ml" },
+    { id: 11, nombre: "Jalea de Cas", categoria: "jaleas", descripcion: "Fruta de temporada, cocida despacio con azúcar moreno.", precio: 2500, unidad: "Frasco 265ml" },
+    { id: 13, nombre: "Jalea de Maracuyá", categoria: "jaleas", descripcion: "Fruta de temporada, cocida despacio con receta clásica.", precio: 2500, unidad: "Frasco 265ml" },
+    { id: 15, nombre: "Jalea de Piña", categoria: "jaleas", descripcion: "Fruta de temporada cocida despacio.", precio: 2500, unidad: "Frasco 265ml" },
+    { id: 16, nombre: "Jalea de Fresa", categoria: "jaleas", descripcion: "Elaboración artesanal con fresas seleccionadas.", precio: 2500, unidad: "Frasco 265ml" },
+    { id: 21, nombre: "Pan Casero de Mantequilla", categoria: "panaderia", descripcion: "Fermentación larga de 24 horas, horneado por tandas.", precio: 3200, unidad: "Pieza 600g" },
+    { id: 22, nombre: "Pan de Banano Tradicional", categoria: "panaderia", descripcion: "Receta artesanal con banano maduro y chispas de chocolate.", precio: 3600, unidad: "Caja x10" }
   ];
 
-  // Productos de la Tienda Vegana
+  // Catalogo 2: Productos de Tienda Vegana
   const PRODUCTOS_VEGANOS = [
-    { id: 101, nombre: "Rompope Vegano (Avena & Coco)", categoria: "licores",
-      descripcion: "Base de leche de avena y coco hecha en casa, especiado con canela y nuez moscada.",
-      precio: 3800, unidad: "Botella 1L" },
-    { id: 102, nombre: "Rompope Vegano (Avena & Coco)", categoria: "licores",
-      descripcion: "Opción vegetal cremosa de sabor artesanal en presentación personal.",
-      precio: 2700, unidad: "Botella 420ml" },
-    { id: 111, nombre: "Jalea Vegana de Cas", categoria: "jaleas",
-      descripcion: "Cas 100% orgánico Endulzado con fructosa natural o azúcar no refinada.",
-      precio: 2500, unidad: "Frasco 265ml" },
-    { id: 113, nombre: "Jalea Vegana de Maracuyá", categoria: "jaleas",
-      descripcion: "Cero gelatinas de origen animal. Pectina de fruta 100% natural.",
-      precio: 2500, unidad: "Frasco 265ml" },
-    { id: 115, nombre: "Jalea Vegana de Piña & Jengibre", categoria: "jaleas",
-      descripcion: "Receta limpia libre de espesantes derivados de animal.",
-      precio: 2500, unidad: "Frasco 265ml" },
-    { id: 116, nombre: "Jalea Vegana de Fresa", categoria: "jaleas",
-      descripcion: "Solo fruta seleccionada y pectina natural vegetal.",
-      precio: 2500, unidad: "Frasco 265ml" },
-    { id: 121, nombre: "Pan Artesanal Vegano de Masa Madre", categoria: "panaderia",
-      descripcion: "Libre de lácteos, huevos y grasas animales. Aceite de oliva virgen.",
-      precio: 3400, unidad: "pieza 600g" },
-    { id: 122, nombre: "Pan de Banano Vegano con Cacao", categoria: "panaderia",
-      descripcion: "Banano maduro, aceite de coco y chispas de chocolate oscuro 70% sin lácteos.",
-      precio: 3800, unidad: "caja x10" },
+    { id: 101, nombre: "Rompope Vegano (Avena & Coco)", categoria: "licores", descripcion: "Base vegetal artesanal de avena y coco con toque de canela.", precio: 3800, unidad: "Botella 1L" },
+    { id: 102, nombre: "Rompope Vegano (Avena & Coco)", categoria: "licores", descripcion: "Opción vegetal cremosa de sabor artesanal en presentación personal.", precio: 2700, unidad: "Botella 420ml" },
+    { id: 111, nombre: "Jalea Vegana de Cas", categoria: "jaleas", descripcion: "Cas seleccionado, libre de pectinas o clarificantes de origen animal.", precio: 2500, unidad: "Frasco 265ml" },
+    { id: 113, nombre: "Jalea Vegana de Maracuyá", categoria: "jaleas", descripcion: "Preparación 100% vegetal endulzada de manera natural.", precio: 2500, unidad: "Frasco 265ml" },
+    { id: 115, nombre: "Jalea Vegana de Piña", categoria: "jaleas", descripcion: "Receta limpia, fruta seleccionada y cocción lenta.", precio: 2500, unidad: "Frasco 265ml" },
+    { id: 116, nombre: "Jalea Vegana de Fresa", categoria: "jaleas", descripcion: "Fresas frescas seleccionadas cocidas con gelificante vegetal.", precio: 2500, unidad: "Frasco 265ml" },
+    { id: 121, nombre: "Pan Vegano de Masa Madre", categoria: "panaderia", descripcion: "Sin huevos ni derivados lácteos. Fermentación natural.", precio: 3400, unidad: "Pieza 600g" },
+    { id: 122, nombre: "Pan de Banano Vegano", categoria: "panaderia", descripcion: "Con chocolate 70% cacao puro libre de lácteos y banano maduro.", precio: 3800, unidad: "Caja x10" }
   ];
 
   const CATEGORIAS = {
     licores: "Licores",
     jaleas: "Jaleas",
     panaderia: "Panadería",
-    chileras: "Chileras (próximamente)",
+    chileras: "Chileras"
   };
 
   const CONTACTO = {
     whatsappPedidos: "50661384503",      
-    correo: "contacto.taegon@gmail.com",
+    correo: "contacto.taegon@gmail.com"
   };
-
-  function formatoColones(numero){
-    return "₡" + numero.toLocaleString("es-CR");
-  }
 
   const ICONOS = {
     licores: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 21c-4-2-7-5.5-7-10a7 7 0 0 1 14 0c0 4.5-3 8-7 10Z"/><path d="M12 14c2-1 3-3 3-5"/></svg>',
     jaleas: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8 3h8l1 4H7l1-4Z"/><path d="M6 7h12v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7Z"/><path d="M6 12h12"/></svg>',
     panaderia: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><ellipse cx="12" cy="12" rx="9" ry="5.5"/><path d="M3 12c0 3 4 5.5 9 5.5s9-2.5 9-5.5"/></svg>',
-    chileras: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 2c2.5 3 4 6 4 8.5a4 4 0 1 1-8 0C8 8 9.5 5 12 2Z"/></svg>',
+    chileras: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 2c2.5 3 4 6 4 8.5a4 4 0 1 1-8 0C8 8 9.5 5 12 2Z"/></svg>'
   };
 
   const IDS_PAGINA = ["inicio", "informacion", "tienda", "producto", "nosotros", "contacto"];
 
-  var tiendaSeleccionada = "estandar"; // "estandar" o "vegana"
-  var filtroActivo = "todos";
-  var carrito = {};
+  let seccionTiendaActual = "estandar"; // "estandar" o "vegana"
+  let filtroCategoriaActual = "todos";
+  let carrito = {};
 
-  function obtenerCatalogoActual(){
-    return tiendaSeleccionada === "vegana" ? PRODUCTOS_VEGANOS : PRODUCTOS_ESTANDAR;
+  function formatoColones(numero){
+    return "₡" + numero.toLocaleString("es-CR");
+  }
+
+  function obtenerCatalogoActivo(){
+    return seccionTiendaActual === "vegana" ? PRODUCTOS_VEGANOS : PRODUCTOS_ESTANDAR;
   }
 
   function obtenerTodosLosProductos(){
     return [...PRODUCTOS_ESTANDAR, ...PRODUCTOS_VEGANOS];
   }
 
-  function irAVista(id, opciones){
-    opciones = opciones || {};
-    if(IDS_PAGINA.indexOf(id) === -1) id = "inicio";
+  function irAVista(id, opciones = {}){
+    if(!IDS_PAGINA.includes(id)) id = "inicio";
 
-    IDS_PAGINA.forEach(function(pid){
+    IDS_PAGINA.forEach(pid => {
       const el = document.getElementById(pid);
       if(el) el.classList.toggle("active", pid === id);
     });
 
-    document.querySelectorAll(".nav-links a, .footer-links a").forEach(function(a){
+    document.querySelectorAll(".nav-links a, .footer-links a").forEach(a => {
       a.classList.toggle("active-link", a.getAttribute("href") === "#" + id);
     });
 
-    navLinks.classList.remove("open");
+    document.getElementById("navLinks").classList.remove("open");
     window.scrollTo(0, 0);
 
     if(!opciones.sinHistorial){
@@ -928,128 +831,120 @@
     const link = e.target.closest('a[href^="#"]');
     if(!link) return;
     const id = link.getAttribute("href").slice(1);
-    if(IDS_PAGINA.indexOf(id) !== -1){
+    if(IDS_PAGINA.includes(id)){
       e.preventDefault();
       irAVista(id);
     }
   });
 
-  document.getElementById("volverTiendaBtn").addEventListener("click", function(){
-    irAVista("tienda");
-  });
+  document.getElementById("volverTiendaBtn").addEventListener("click", () => irAVista("tienda"));
 
-  window.addEventListener("popstate", function(){
+  window.addEventListener("popstate", () => {
     const id = (location.hash || "#inicio").slice(1);
     irAVista(id, { sinHistorial: true });
   });
 
-  (function iniciarSegunHash(){
-    const id = (location.hash || "#inicio").slice(1);
-    if(IDS_PAGINA.indexOf(id) !== -1 && id !== "inicio"){
-      irAVista(id, { sinHistorial: true });
-    } else {
-      document.querySelector('.nav-links a[href="#inicio"]').classList.add("active-link");
-    }
-  })();
-
-  // Cambiar entre Tienda y Tienda Vegana
+  // Pestañas Tienda vs Tienda Vegana
   const btnStandard = document.getElementById("btnStoreStandard");
   const btnVegan = document.getElementById("btnStoreVegan");
 
-  btnStandard.addEventListener("click", ()=>{
-    tiendaSeleccionada = "estandar";
-    btnStandard.classList.add("active");
-    btnVegan.classList.remove("active");
-    document.getElementById("shopKicker").textContent = "Tienda";
-    document.getElementById("shopTitle").textContent = "Piezas de temporada";
-    document.getElementById("shopSubtitle").textContent = "Hechas en lotes pequeños. Cuando algo se agota, vuelve en su próxima temporada.";
-    filtroActivo = "todos";
-    pintarFiltros();
-    pintarProductos();
-  });
+  btnStandard.addEventListener("click", () => cambiarTipoTienda("estandar"));
+  btnVegan.addEventListener("click", () => cambiarTipoTienda("vegana"));
 
-  btnVegan.addEventListener("click", ()=>{
-    tiendaSeleccionada = "vegana";
-    btnVegan.classList.add("active");
-    btnStandard.classList.remove("active");
-    document.getElementById("shopKicker").textContent = "Tienda Vegana";
-    document.getElementById("shopTitle").textContent = "Línea 100% Plant-Based";
-    document.getElementById("shopSubtitle").textContent = "Elaboraciones libres de ingredientes de origen animal sin comprometer sabor ni textura.";
-    filtroActivo = "todos";
-    pintarFiltros();
-    pintarProductos();
-  });
+  function cambiarTipoTienda(tipo){
+    seccionTiendaActual = tipo;
+    filtroCategoriaActual = "todos";
 
-  function pintarFiltros(){
+    if(tipo === "estandar"){
+      btnStandard.classList.add("active");
+      btnVegan.classList.remove("active");
+      document.getElementById("shopKicker").textContent = "Catálogo Regular";
+      document.getElementById("shopTitle").textContent = "Piezas de temporada";
+      document.getElementById("shopSubtitle").textContent = "Hechas en lotes pequeños. Cuando algo se agota, vuelve en su próxima temporada.";
+    } else {
+      btnVegan.classList.add("active");
+      btnStandard.classList.remove("active");
+      document.getElementById("shopKicker").textContent = "Tienda Vegana";
+      document.getElementById("shopTitle").textContent = "Línea 100% Plant-Based";
+      document.getElementById("shopSubtitle").textContent = "Elaboraciones libres de ingredientes de origen animal sin comprometer el sabor original.";
+    }
+
+    renderizarFiltros();
+    renderizarProductos();
+  }
+
+  function renderizarFiltros(){
     const cont = document.getElementById("filters");
-    const todas = ["todos", ...Object.keys(CATEGORIAS)];
-    cont.innerHTML = todas.map(cat => {
+    const listaCategorias = ["todos", ...Object.keys(CATEGORIAS)];
+    
+    cont.innerHTML = listaCategorias.map(cat => {
       const nombre = cat === "todos" ? "Todo" : CATEGORIAS[cat];
-      const activa = cat === filtroActivo ? "active" : "";
+      const activa = cat === filtroCategoriaActual ? "active" : "";
       return `<button class="filter-btn ${activa}" data-cat="${cat}">${nombre}</button>`;
     }).join("");
 
-    cont.querySelectorAll(".filter-btn").forEach(btn=>{
-      btn.addEventListener("click", ()=>{
-        filtroActivo = btn.dataset.cat;
-        pintarFiltros();
-        pintarProductos();
+    cont.querySelectorAll(".filter-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        filtroCategoriaActual = btn.dataset.cat;
+        renderizarFiltros();
+        renderizarProductos();
       });
     });
   }
 
-  const ICONO_FLECHA = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 6l6 6-6 6"/></svg>';
-
-  function pintarProductos(){
+  function renderizarProductos(){
     const cont = document.getElementById("productGrid");
-    const catalogo = obtenerCatalogoActual();
-    const lista = filtroActivo === "todos"
+    const catalogo = obtenerCatalogoActivo();
+    const lista = filtroCategoriaActual === "todos"
       ? catalogo
-      : catalogo.filter(p => p.categoria === filtroActivo);
+      : catalogo.filter(p => p.categoria === filtroCategoriaActual);
+
+    if(lista.length === 0){
+      cont.innerHTML = `<div style="grid-column:1/-1; padding:40px 0; color:var(--text-on-ink-muted);">Próximamente tendremos productos en esta categoría.</div>`;
+      return;
+    }
 
     cont.innerHTML = lista.map(p => `
-      <article class="product-card" data-id="${p.id}" tabindex="0" role="button" aria-label="Ver ${p.nombre}">
+      <article class="product-card" data-id="${p.id}" tabindex="0">
         <div class="product-icon">${ICONOS[p.categoria] || ""}</div>
         <h3>${p.nombre}</h3>
         <p class="desc">${p.descripcion}</p>
         <div class="product-foot">
           <span class="price">${formatoColones(p.precio)}<br><small>${p.unidad}</small></span>
-          <span class="view-arrow" aria-hidden="true">${ICONO_FLECHA}</span>
+          <span class="view-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 6l6 6-6 6"/></svg>
+          </span>
         </div>
       </article>
     `).join("");
 
-    cont.querySelectorAll(".product-card").forEach(card=>{
+    cont.querySelectorAll(".product-card").forEach(card => {
       const id = Number(card.dataset.id);
-      card.addEventListener("click", ()=> abrirProducto(id));
-      card.addEventListener("keydown", (e)=>{
-        if(e.key === "Enter" || e.key === " "){
+      card.addEventListener("click", () => abrirDetalleProducto(id));
+      card.addEventListener("keydown", (e) => {
+        if(e.key === "Enter" || e.key === " ") {
           e.preventDefault();
-          abrirProducto(id);
+          abrirDetalleProducto(id);
         }
       });
     });
   }
 
-  let cantidadDetalle = 1;
+  let cantidadSeleccionada = 1;
 
-  function abrirProducto(id){
+  function abrirDetalleProducto(id){
     const todos = obtenerTodosLosProductos();
     const prod = todos.find(p => p.id === id);
     if(!prod) return;
-    cantidadDetalle = 1;
-    pintarFichaProducto(prod);
-    irAVista("producto");
-  }
 
-  function pintarFichaProducto(prod){
+    cantidadSeleccionada = 1;
     const cont = document.getElementById("productDetailContent");
+
     cont.innerHTML = `
       <div>
-        <div class="product-image-box" id="detailImageBox" tabindex="0" role="button" aria-label="Ampliar imagen de ${prod.nombre}">
+        <div class="product-image-box" id="detailImageBox" tabindex="0">
           ${ICONOS[prod.categoria] || ""}
         </div>
-        <p class="zoom-hint">Toca la imagen para ampliarla</p>
       </div>
       <div class="product-detail-info">
         <span class="kicker">${CATEGORIAS[prod.categoria] || ""}</span>
@@ -1059,84 +954,57 @@
 
         <div class="detail-cart-box">
           <div class="qty-row">
-            <button type="button" id="detailMenos" aria-label="Restar">−</button>
+            <button type="button" id="detailMenos">−</button>
             <span id="detailCantidad">1</span>
-            <button type="button" id="detailMas" aria-label="Sumar">+</button>
+            <button type="button" id="detailMas">+</button>
           </div>
           <button type="button" class="btn btn-solid" id="detailAgregarBtn">Añadir al carrito</button>
         </div>
-        <p class="detail-note">Al añadirlo, el producto queda en tu carrito. Podrás revisarlo y enviar tu pedido por WhatsApp o correo desde el botón "Carrito" del menú.</p>
       </div>
     `;
 
-    document.getElementById("detailMenos").addEventListener("click", ()=>{
-      if(cantidadDetalle > 1) cantidadDetalle--;
-      document.getElementById("detailCantidad").textContent = cantidadDetalle;
+    document.getElementById("detailMenos").addEventListener("click", () => {
+      if(cantidadSeleccionada > 1) cantidadSeleccionada--;
+      document.getElementById("detailCantidad").textContent = cantidadSeleccionada;
     });
-    document.getElementById("detailMas").addEventListener("click", ()=>{
-      cantidadDetalle++;
-      document.getElementById("detailCantidad").textContent = cantidadDetalle;
+
+    document.getElementById("detailMas").addEventListener("click", () => {
+      cantidadSeleccionada++;
+      document.getElementById("detailCantidad").textContent = cantidadSeleccionada;
     });
 
     const agregarBtn = document.getElementById("detailAgregarBtn");
-    agregarBtn.addEventListener("click", ()=>{
-      agregarAlCarrito(prod.id, cantidadDetalle);
-      const original = agregarBtn.textContent;
+    agregarBtn.addEventListener("click", () => {
+      agregarAlCarrito(prod.id, cantidadSeleccionada);
       agregarBtn.textContent = "Añadido ✓";
-      setTimeout(()=>{ agregarBtn.textContent = original; }, 1000);
+      setTimeout(() => { agregarBtn.textContent = "Añadir al carrito"; }, 1200);
     });
 
-    const imageBox = document.getElementById("detailImageBox");
-    const abrirLightbox = ()=>{
+    document.getElementById("detailImageBox").addEventListener("click", () => {
       document.getElementById("lightboxImage").innerHTML = ICONOS[prod.categoria] || "";
-      document.getElementById("lightboxImage").classList.remove("zoomed");
       document.getElementById("lightboxOverlay").classList.add("open");
-    };
-    imageBox.addEventListener("click", abrirLightbox);
-    imageBox.addEventListener("keydown", (e)=>{
-      if(e.key === "Enter" || e.key === " "){ e.preventDefault(); abrirLightbox(); }
     });
+
+    irAVista("producto");
   }
 
-  const lightboxOverlay = document.getElementById("lightboxOverlay");
-  const lightboxImage = document.getElementById("lightboxImage");
-  document.getElementById("lightboxCloseBtn").addEventListener("click", ()=>{
-    lightboxOverlay.classList.remove("open");
-  });
-  lightboxOverlay.addEventListener("click", (e)=>{
-    if(e.target === lightboxOverlay) lightboxOverlay.classList.remove("open");
-  });
-  lightboxImage.addEventListener("click", ()=>{
-    lightboxImage.classList.toggle("zoomed");
+  document.getElementById("lightboxCloseBtn").addEventListener("click", () => {
+    document.getElementById("lightboxOverlay").classList.remove("open");
   });
 
-  function agregarAlCarrito(id, cantidad){
-    cantidad = cantidad || 1;
+  function agregarAlCarrito(id, cantidad = 1){
     carrito[id] = (carrito[id] || 0) + cantidad;
-    pintarCarrito();
+    renderizarCarrito();
   }
-  function cambiarCantidad(id, delta){
+
+  function cambiarCantidadCarrito(id, delta){
     if(!carrito[id]) return;
     carrito[id] += delta;
     if(carrito[id] <= 0) delete carrito[id];
-    pintarCarrito();
-  }
-  function quitarDelCarrito(id){
-    delete carrito[id];
-    pintarCarrito();
-  }
-  function totalCarrito(){
-    const todos = obtenerTodosLosProductos();
-    return Object.entries(carrito).reduce((sum, [id, cant])=>{
-      const prod = todos.find(p => p.id === Number(id));
-      return sum + (prod ? prod.precio * cant : 0);
-    }, 0);
-  }
-  function cantidadTotalItems(){
-    return Object.values(carrito).reduce((a,b)=>a+b, 0);
+    renderizarCarrito();
   }
 
-  function pintarCarrito(){
+  function renderizarCarrito(){
     const cont = document.getElementById("cartItems");
     const ids = Object.keys(carrito);
     const todos = obtenerTodosLosProductos();
@@ -1144,7 +1012,7 @@
     if(ids.length === 0){
       cont.innerHTML = `<p class="cart-empty">Tu carrito está vacío. Explora la tienda y agrega lo que te guste.</p>`;
     } else {
-      cont.innerHTML = ids.map(id=>{
+      cont.innerHTML = ids.map(id => {
         const prod = todos.find(p => p.id === Number(id));
         const cant = carrito[id];
         return `
@@ -1154,60 +1022,81 @@
               <h4>${prod.nombre}</h4>
               <div class="unit">${formatoColones(prod.precio)} · ${prod.unidad}</div>
               <div class="qty-row">
-                <button data-id="${id}" data-delta="-1" aria-label="Restar">−</button>
+                <button data-id="${id}" data-delta="-1">−</button>
                 <span>${cant}</span>
-                <button data-id="${id}" data-delta="1" aria-label="Sumar">+</button>
+                <button data-id="${id}" data-delta="1">+</button>
                 <button class="remove" data-id="${id}" data-remove="1">Quitar</button>
               </div>
             </div>
           </div>`;
       }).join("");
 
-      cont.querySelectorAll("[data-delta]").forEach(btn=>{
-        btn.addEventListener("click", ()=> cambiarCantidad(Number(btn.dataset.id), Number(btn.dataset.delta)));
+      cont.querySelectorAll("[data-delta]").forEach(btn => {
+        btn.addEventListener("click", () => cambiarCantidadCarrito(Number(btn.dataset.id), Number(btn.dataset.delta)));
       });
-      cont.querySelectorAll("[data-remove]").forEach(btn=>{
-        btn.addEventListener("click", ()=> quitarDelCarrito(Number(btn.dataset.id)));
+      cont.querySelectorAll("[data-remove]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          delete carrito[Number(btn.dataset.id)];
+          renderizarCarrito();
+        });
       });
     }
 
-    document.getElementById("cartTotal").textContent = formatoColones(totalCarrito());
-    document.getElementById("cartCount").textContent = cantidadTotalItems();
+    const total = Object.entries(carrito).reduce((acc, [id, cant]) => {
+      const p = todos.find(prod => prod.id === Number(id));
+      return acc + (p ? p.precio * cant : 0);
+    }, 0);
+
+    const cantidadTotal = Object.values(carrito).reduce((a, b) => a + b, 0);
+
+    document.getElementById("cartTotal").textContent = formatoColones(total);
+    document.getElementById("cartCount").textContent = cantidadTotal;
   }
 
   const cartDrawer = document.getElementById("cartDrawer");
   const cartOverlay = document.getElementById("cartOverlay");
-  function abrirCarrito(){ cartDrawer.classList.add("open"); cartOverlay.classList.add("open"); }
-  function cerrarCarrito(){ cartDrawer.classList.remove("open"); cartOverlay.classList.remove("open"); }
-  document.getElementById("cartOpenBtn").addEventListener("click", abrirCarrito);
+
+  document.getElementById("cartOpenBtn").addEventListener("click", () => {
+    cartDrawer.classList.add("open");
+    cartOverlay.classList.add("open");
+  });
+
+  const cerrarCarrito = () => {
+    cartDrawer.classList.remove("open");
+    cartOverlay.classList.remove("open");
+  };
+
   document.getElementById("cartCloseBtn").addEventListener("click", cerrarCarrito);
   cartOverlay.addEventListener("click", cerrarCarrito);
 
-  const navLinks = document.getElementById("navLinks");
-  document.getElementById("navToggle").addEventListener("click", ()=>{
-    navLinks.classList.toggle("open");
+  document.getElementById("navToggle").addEventListener("click", () => {
+    document.getElementById("navLinks").classList.toggle("open");
   });
 
-  function textoDelPedido(){
+  function generarTextoPedido(){
     const todos = obtenerTodosLosProductos();
-    const lineas = Object.entries(carrito).map(([id, cant])=>{
+    const lineas = Object.entries(carrito).map(([id, cant]) => {
       const prod = todos.find(p => p.id === Number(id));
       return `• ${prod.nombre} x${cant} — ${formatoColones(prod.precio * cant)}`;
     });
-    lineas.push("", `Total: ${formatoColones(totalCarrito())}`);
-    return "Hola, quisiera hacer este pedido en Taegon:\n\n" + lineas.join("\n");
+    const total = Object.entries(carrito).reduce((acc, [id, cant]) => {
+      const p = todos.find(prod => prod.id === Number(id));
+      return acc + (p ? p.precio * cant : 0);
+    }, 0);
+
+    return "Hola, quisiera hacer este pedido en Taegon:\n\n" + lineas.join("\n") + `\n\nTotal: ${formatoColones(total)}`;
   }
 
-  document.getElementById("checkoutWhatsapp").addEventListener("click", ()=>{
-    if(cantidadTotalItems() === 0){ return; }
-    const texto = encodeURIComponent(textoDelPedido());
-    window.open(`https://wa.me/${CONTACTO.whatsappPedidos}?text=${texto}`, "_blank");
+  document.getElementById("checkoutWhatsapp").addEventListener("click", () => {
+    if(Object.keys(carrito).length === 0) return;
+    const msg = encodeURIComponent(generarTextoPedido());
+    window.open(`https://wa.me/${CONTACTO.whatsappPedidos}?text=${msg}`, "_blank");
   });
 
-  document.getElementById("checkoutEmail").addEventListener("click", ()=>{
-    if(cantidadTotalItems() === 0){ return; }
+  document.getElementById("checkoutEmail").addEventListener("click", () => {
+    if(Object.keys(carrito).length === 0) return;
     const asunto = encodeURIComponent("Pedido en Taegon");
-    const cuerpo = encodeURIComponent(textoDelPedido());
+    const cuerpo = encodeURIComponent(generarTextoPedido());
     window.location.href = `mailto:${CONTACTO.correo}?subject=${asunto}&body=${cuerpo}`;
   });
 
@@ -1221,22 +1110,15 @@
     const cuerpo = encodeURIComponent(`Nombre: ${nombre}\nCorreo: ${correo}\n\nMensaje:\n${mensaje}`);
     window.location.href = `mailto:${CONTACTO.correo}?subject=${asunto}&body=${cuerpo}`;
 
-    document.getElementById("formMsg").textContent = "Abriendo tu programa de correo…";
+    document.getElementById("formMsg").textContent = "Abriendo tu cliente de correo...";
     this.reset();
   });
 
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  pintarFiltros();
-  pintarProductos();
-  pintarCarrito();
-</script>
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js')
-      .then(reg => console.log('SW registrado', reg))
-      .catch(err => console.error('Error al registrar SW', err));
-  }
+  // Inicializar componentes
+  cambiarTipoTienda("estandar");
+  renderizarCarrito();
 </script>
 </body>
 </html>
