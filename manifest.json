@@ -1,0 +1,20 @@
+{
+  "short_name": "Taegon",
+  "name": "Taegon",
+  "icons": [
+    {
+      "src": "taegon x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "taegon x512 (1).png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "display": "standalone"
+}
