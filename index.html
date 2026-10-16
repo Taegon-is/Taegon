@@ -262,6 +262,17 @@
   .view-arrow svg{ width:16px; height:16px; transition: transform .2s ease; }
   .product-card:hover .view-arrow, .product-card:focus-visible .view-arrow{ border-color: var(--brass); color: var(--brass); }
 
+  /* 📸 NUEVO (CSS): Reglas para que las fotos de los productos se ajusten correctamente */
+  .product-icon img, .product-image-box img, .lightbox-image img, .cart-item-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius);
+  }
+  .product-image-box {
+    overflow: hidden;
+  }
+
   @media (max-width: 980px){ .product-grid{ grid-template-columns: repeat(2,1fr); } }
   @media (max-width: 620px){ .product-grid{ grid-template-columns: 1fr; } }
 
@@ -753,6 +764,13 @@
   const PRODUCTOS_ESTANDAR = [
     //{ id: 1, nombre: "Rompope Tradicional", categoria: "licores", descripcion: "Elaboración artesanal tradicional de sabor suave y cremoso.", precio: 3500, unidad: "Botella 1L" },
     //{ id: 2, nombre: "Rompope Tradicional", categoria: "licores", descripcion: "Elaboración artesanal de sabor suave y cremoso en formato pequeño.", precio: 2500, unidad: "Botella 420ml" },
+    
+    /* 
+      💡 CÓMO AGREGAR UNA IMAGEN AQUÍ:
+      Simplemente añade `, imagen: "nombre-de-tu-foto.jpg"` al final de cualquier llave '}' de producto.
+      Ejemplo: { id: 11, nombre: "Jalea de Cas", ..., precio: 2500, unidad: "Frasco 265ml", imagen: "cas.jpg" },
+      Si no pones la propiedad 'imagen', el sistema usará automáticamente el icono SVG por defecto.
+    */
     { id: 11, nombre: "Jalea de Cas", categoria: "jaleas", descripcion: "Fruta de temporada, cocida despacio con azúcar moreno.", precio: 2500, unidad: "Frasco 265ml" },
     { id: 13, nombre: "Jalea de Guayaba", categoria: "jaleas", descripcion: "Fruta de temporada, cocida despacio con receta clásica.", precio: 2500, unidad: "Frasco 265ml" },
     { id: 15, nombre: "Jalea de Piña", categoria: "jaleas", descripcion: "Fruta de temporada cocida despacio.", precio: 2500, unidad: "Frasco 265ml" },
@@ -907,9 +925,12 @@
       return;
     }
 
+    /* 📸 MODIFICACIÓN TÉCNICA (Renderizado de imagen o icono por defecto) */
     cont.innerHTML = lista.map(p => `
       <article class="product-card" data-id="${p.id}" tabindex="0">
-        <div class="product-icon">${ICONOS[p.categoria] || ""}</div>
+        <div class="product-icon">
+          ${p.imagen ? `<img src="${p.imagen}" alt="${p.nombre}">` : (ICONOS[p.categoria] || "")}
+        </div>
         <h3>${p.nombre}</h3>
         <p class="desc">${p.descripcion}</p>
         <div class="product-foot">
@@ -943,10 +964,11 @@
     cantidadSeleccionada = 1;
     const cont = document.getElementById("productDetailContent");
 
+    /* 📸 MODIFICACIÓN TÉCNICA (Detalle de producto con imagen opcional) */
     cont.innerHTML = `
       <div>
         <div class="product-image-box" id="detailImageBox" tabindex="0">
-          ${ICONOS[prod.categoria] || ""}
+          ${prod.imagen ? `<img src="${prod.imagen}" alt="${prod.nombre}">` : (ICONOS[prod.categoria] || "")}
         </div>
       </div>
       <div class="product-detail-info">
@@ -984,7 +1006,8 @@
     });
 
     document.getElementById("detailImageBox").addEventListener("click", () => {
-      document.getElementById("lightboxImage").innerHTML = ICONOS[prod.categoria] || "";
+      /* 📸 MODIFICACIÓN TÉCNICA (Lightbox con imagen ampliada opcional) */
+      document.getElementById("lightboxImage").innerHTML = prod.imagen ? `<img src="${prod.imagen}" alt="${prod.nombre}">` : (ICONOS[prod.categoria] || "");
       document.getElementById("lightboxOverlay").classList.add("open");
     });
 
@@ -1015,12 +1038,15 @@
     if(ids.length === 0){
       cont.innerHTML = `<p class="cart-empty">Tu carrito está vacío. Explora la tienda y agrega lo que te guste.</p>`;
     } else {
+      /* 📸 MODIFICACIÓN TÉCNICA (Miniatura de imagen en el carrito lateral) */
       cont.innerHTML = ids.map(id => {
         const prod = todos.find(p => p.id === Number(id));
         const cant = carrito[id];
         return `
           <div class="cart-item">
-            <div class="cart-item-icon">${ICONOS[prod.categoria] || ""}</div>
+            <div class="cart-item-icon">
+              ${prod.imagen ? `<img src="${prod.imagen}" alt="${prod.nombre}">` : (ICONOS[prod.categoria] || "")}
+            </div>
             <div class="cart-item-info">
               <h4>${prod.nombre}</h4>
               <div class="unit">${formatoColones(prod.precio)} · ${prod.unidad}</div>
